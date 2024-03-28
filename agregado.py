@@ -56,8 +56,8 @@ def buscar_variaveis(response_meta_agregado):
 def buscar_localidades_nivel_agregado(id_agregado,id_nivel):
 	url = (f"{url_base}/{id_agregado}/localidades/{id_nivel}")
 	response_localidades = requests.get(url).json()
-	st.write(url)
-	st.write(response_localidades)
+	#st.write(url)
+	#st.write(response_localidades)
 	df_localidades = pd.DataFrame(response_localidades)[["id","nome"]]
 	
 	if id_nivel == "N6":
