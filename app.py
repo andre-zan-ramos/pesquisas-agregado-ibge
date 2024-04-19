@@ -25,6 +25,8 @@ options,df_localidades = ag.carregar(id_agregado,id_nivel,df_acervo_indicadores_
 
 rp.carregar(id_agregado,id_nivel,options,df_localidades)
 
+st.write(f'Parâmetros: {parametros}')
+
 lixo = '''
 st.write(f'Parâmetros: {parametros}')
 st.write(f'id_agregado: {id_agregado}')

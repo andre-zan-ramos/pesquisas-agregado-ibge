@@ -7,7 +7,8 @@ url_base = "https://servicodados.ibge.gov.br/api/v3/agregados"
 def init():
 	dfs = {
 		"acervo_indicadores_assunto":pd.DataFrame(columns=["id","literal","tipo","label"]),
-		"acervo_indicadores_nivel":pd.DataFrame([["N6","","Nível geográfico","N6 - Município"]],columns=["id","literal","tipo","label"])
+		"acervo_indicadores_nivel":pd.DataFrame([["N6","","Nível geográfico","N6 - Município"]],columns=["id","literal","tipo","label"]),
+		"acervo_indicadores_periodos":pd.DataFrame(columns=["id","literal","tipo","label"])
 	}
 	
 	urls = {
@@ -24,7 +25,11 @@ def buscar(tipo):
 	response = requests.get(url).json()
 	df = pd.DataFrame(response, columns=["id","literal","tipo"])
 	df["tipo"]=tipo
-	df["label"] = df["id"].astype("string") + " - " + df["literal"]
+	if tipo == "P":
+		df = df[df["id"]==df["literal"]].sort_values("literal",ascending=False)
+		df["label"] = df["literal"]
+	else:
+		df["label"] = df["id"].astype("string") + " - " + df["literal"]
 	
 	return df, url
 	
@@ -34,11 +39,12 @@ def carregar():
 	if st.session_state["layout_carregado"]:
 		dfs["acervo_indicadores_assunto"],urls["acervo_indicadores_assunto"] = buscar("A")
 		dfs["acervo_indicadores_nivel"],urls["acervo_indicadores_nivel"] = buscar("N")
+		dfs["acervo_indicadores_periodos"],urls["acervo_indicadores_periodos"] = buscar("P")
 	
 	c = st.container(border=True)
 	c.subheader("Lista de parâmetros de pesquisa")
 	
-	c1,c2 = c.columns(2)
+	c1,c2,c3 = c.columns([2,2,1])
 	
 	df = dfs["acervo_indicadores_assunto"]
 	options_assunto = c1.selectbox(
@@ -62,12 +68,23 @@ def carregar():
 	if options_nivel:
 		parametros["nivel"] = df.loc[df["label"]==options_nivel,"id"].values[0]
 	
+	df = dfs["acervo_indicadores_periodos"]
+	options_ano = c3.selectbox(
+		"Ano que contenha a pesquisa:",
+		options=df.label,
+		index=None,
+		placeholder="Escolha um ano"
+	)
+	if options_ano:
+		parametros["periodo"] = options_ano
 	
-	if urls["acervo_indicadores_assunto"] and urls["acervo_indicadores_nivel"]:
+	if urls["acervo_indicadores_assunto"] and urls["acervo_indicadores_nivel"] and urls["acervo_indicadores_periodos"]:
 		e = c.expander("Dados sobre os parâmetros")
 		e.markdown(f'**:blue[Parâmetro:]** Assunto  \n*Fonte:* {urls["acervo_indicadores_assunto"]}')
 		e.markdown("<br>", unsafe_allow_html=True)
-		e.markdown(f'**:blue[Parâmetro:]** Nível  \n*Fonte:* {urls["acervo_indicadores_nivel"]}')	
+		e.markdown(f'**:blue[Parâmetro:]** Nível  \n*Fonte:* {urls["acervo_indicadores_nivel"]}')
+		e.markdown("<br>", unsafe_allow_html=True)
+		e.markdown(f'**:blue[Parâmetro:]** Períodos (*filtrados apenas os anos*)  \n*Fonte:* {urls["acervo_indicadores_periodos"]}')
 	
 	parametros_string = '&'.join([f'{key}={value}' for key, value in parametros.items() if value!=""])
 	
