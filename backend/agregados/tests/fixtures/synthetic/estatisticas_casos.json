@@ -1,0 +1,74 @@
+[
+  {
+    "caso": "uma_observacao",
+    "periodos": [
+      "202401"
+    ],
+    "valores": [
+      10
+    ],
+    "esperado": {
+      "n": 1,
+      "media": 10,
+      "desvio": null,
+      "cv": null
+    }
+  },
+  {
+    "caso": "media_zero",
+    "periodos": [
+      "202401",
+      "202403"
+    ],
+    "valores": [
+      -1,
+      1
+    ],
+    "esperado": {
+      "n": 2,
+      "media": 0,
+      "cv": null
+    }
+  },
+  {
+    "caso": "empate",
+    "periodos": [
+      "202401",
+      "202403"
+    ],
+    "valores": [
+      10,
+      10
+    ],
+    "esperado": {
+      "n": 2,
+      "media": 10,
+      "desvio": 0,
+      "cv": 0,
+      "periodos_min": [
+        "202401",
+        "202403"
+      ],
+      "periodos_max": [
+        "202401",
+        "202403"
+      ]
+    }
+  },
+  {
+    "caso": "media_negativa",
+    "periodos": [
+      "202401",
+      "202403"
+    ],
+    "valores": [
+      -2,
+      -4
+    ],
+    "esperado": {
+      "n": 2,
+      "media": -3,
+      "cv": null
+    }
+  }
+]

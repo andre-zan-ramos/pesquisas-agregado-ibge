@@ -1,0 +1,80 @@
+[
+  {
+    "id": "CA",
+    "nome": "Censo Agropecuário",
+    "agregados": [
+      {
+        "id": "1272",
+        "nome": "Produtos da lavoura temporária nos estabelecimentos agropecuários, segundo indicadores da agricultura familiar e não familiar - FAO"
+      },
+      {
+        "id": "1712",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, condição produtor em relação às terras, grupos de atividade econômica, grupos de área total e grupos de área colhida - (MDA - PRONAF)"
+      },
+      {
+        "id": "1716",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, tipo de semente, tipo de colheita e tipo de cultivo - (MDA - PRONAF)"
+      },
+      {
+        "id": "1720",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, uso de agrotóxicos, uso de adubação e principal mês de plantio e de colheita - (MDA - PRONAF)"
+      },
+      {
+        "id": "1723",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, destino da produção e uso de irrigação - (MDA - PRONAF)"
+      },
+      {
+        "id": "1731",
+        "nome": "Quantidade produzida por produtos das lavouras temporárias - série histórica (1940/2006)"
+      },
+      {
+        "id": "1823",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária e grupos e classes de atividade"
+      },
+      {
+        "id": "2237",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, com agricultura familiar e não familiar, por produtos da lavoura temporária, condição produtor em relação às terras, grupos de atividade econômica, grupos de área total e grupos de área colhida - (MDA)"
+      },
+      {
+        "id": "2265",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, com agricultura familiar e não familiar, por produtos da lavoura temporária, tipo de semente, tipo de colheita e tipo de cultivo - (MDA)"
+      },
+      {
+        "id": "2266",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, com agricultura familiar e não familiar, por produtos da lavoura temporária, uso de agrotóxicos, uso de adubação e principal mês de plantio e de colheita - (MDA)"
+      },
+      {
+        "id": "2284",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, com agricultura familiar e não familiar, por produtos da lavoura temporária, destino da produção e uso de irrigação - (MDA)"
+      },
+      {
+        "id": "2868",
+        "nome": "Produção, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, grupos e classes de atividade econômica e uso de agricultura orgânica"
+      },
+      {
+        "id": "3374",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, sexo e residência do produtor, orientação técnica, origem da orientação técnica e nivel de instrução da pessoa que dirige o estabelecimento"
+      },
+      {
+        "id": "3411",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, segundo indicadores da agricultura familiar e não familiar - FAO"
+      },
+      {
+        "id": "4109",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária, por produtos da lavoura temporária, tipo de colheita, tipo de semente e classificações de médio produtor"
+      },
+      {
+        "id": "822",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, condição produtor em relação às terras, grupos de atividade econômica, grupos de área total e grupos de área colhida"
+      },
+      {
+        "id": "824",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, tipo de semente, tipo de colheita, tipo de cultivo e destino da produção"
+      },
+      {
+        "id": "825",
+        "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, uso de irrigação, uso de agrotóxicos, uso de adubação e principal mês de plantio e de colheita"
+      }
+    ]
+  }
+]

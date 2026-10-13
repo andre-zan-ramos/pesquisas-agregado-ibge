@@ -1,0 +1,1206 @@
+{
+  "data": {
+    "consulta_aplicada": {
+      "agregado_id": "1712",
+      "nivel_id": "N1",
+      "localidade_ids": [
+        "1"
+      ],
+      "variavel_ids": [
+        "214",
+        "1982"
+      ],
+      "periodo_ids": [
+        "2006"
+      ],
+      "classificacoes": [
+        {
+          "classificacao_id": "226",
+          "categoria_ids": [
+            "4844",
+            "96608"
+          ]
+        },
+        {
+          "classificacao_id": "218",
+          "categoria_ids": [
+            "4780"
+          ]
+        },
+        {
+          "classificacao_id": "12517",
+          "categoria_ids": [
+            "0"
+          ]
+        },
+        {
+          "classificacao_id": "220",
+          "categoria_ids": [
+            "0"
+          ]
+        },
+        {
+          "classificacao_id": "12523",
+          "categoria_ids": [
+            "0"
+          ]
+        },
+        {
+          "classificacao_id": "12617",
+          "categoria_ids": [
+            "0"
+          ]
+        }
+      ]
+    },
+    "observacoes": [
+      {
+        "agregado_id": "1712",
+        "variavel_id": "214",
+        "variavel_nome": "Quantidade produzida",
+        "unidade": "Mil frutos",
+        "unidade_original": "Mil frutos",
+        "unidade_status": "coerente",
+        "nivel_id": "N1",
+        "localidade_id": "1",
+        "localidade_nome": "Brasil",
+        "periodo_id": "2006",
+        "classificacoes": [
+          {
+            "classificacao_id": "226",
+            "classificacao_nome": "Produtos da lavoura temporária",
+            "categoria_id": "4844",
+            "categoria_nome": "Abacaxi",
+            "categoria_unidade": "Mil frutos"
+          },
+          {
+            "classificacao_id": "218",
+            "classificacao_nome": "Condição do produtor em relação às terras",
+            "categoria_id": "4780",
+            "categoria_nome": "Proprietário",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12517",
+            "classificacao_nome": "Grupos de atividade econômica",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "220",
+            "classificacao_nome": "Grupos de área total",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12523",
+            "classificacao_nome": "Grupos de área colhida",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12617",
+            "classificacao_nome": "Pronafiano",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "456692",
+        "valor_numerico": 456692,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 0,
+          "serie": 0
+        }
+      },
+      {
+        "agregado_id": "1712",
+        "variavel_id": "214",
+        "variavel_nome": "Quantidade produzida",
+        "unidade": null,
+        "unidade_original": "Mil frutos",
+        "unidade_status": "conflitante",
+        "nivel_id": "N1",
+        "localidade_id": "1",
+        "localidade_nome": "Brasil",
+        "periodo_id": "2006",
+        "classificacoes": [
+          {
+            "classificacao_id": "226",
+            "classificacao_nome": "Produtos da lavoura temporária",
+            "categoria_id": "96608",
+            "categoria_nome": "Amendoim em casca",
+            "categoria_unidade": "Toneladas"
+          },
+          {
+            "classificacao_id": "218",
+            "classificacao_nome": "Condição do produtor em relação às terras",
+            "categoria_id": "4780",
+            "categoria_nome": "Proprietário",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12517",
+            "classificacao_nome": "Grupos de atividade econômica",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "220",
+            "classificacao_nome": "Grupos de área total",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12523",
+            "classificacao_nome": "Grupos de área colhida",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12617",
+            "classificacao_nome": "Pronafiano",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "86804",
+        "valor_numerico": 86804,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 1,
+          "serie": 0
+        }
+      },
+      {
+        "agregado_id": "1712",
+        "variavel_id": "1982",
+        "variavel_nome": "Quantidade vendida",
+        "unidade": "Mil frutos",
+        "unidade_original": "Mil frutos",
+        "unidade_status": "coerente",
+        "nivel_id": "N1",
+        "localidade_id": "1",
+        "localidade_nome": "Brasil",
+        "periodo_id": "2006",
+        "classificacoes": [
+          {
+            "classificacao_id": "226",
+            "classificacao_nome": "Produtos da lavoura temporária",
+            "categoria_id": "4844",
+            "categoria_nome": "Abacaxi",
+            "categoria_unidade": "Mil frutos"
+          },
+          {
+            "classificacao_id": "218",
+            "classificacao_nome": "Condição do produtor em relação às terras",
+            "categoria_id": "4780",
+            "categoria_nome": "Proprietário",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12517",
+            "classificacao_nome": "Grupos de atividade econômica",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "220",
+            "classificacao_nome": "Grupos de área total",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12523",
+            "classificacao_nome": "Grupos de área colhida",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12617",
+            "classificacao_nome": "Pronafiano",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "424883",
+        "valor_numerico": 424883,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 0,
+          "serie": 0
+        }
+      },
+      {
+        "agregado_id": "1712",
+        "variavel_id": "1982",
+        "variavel_nome": "Quantidade vendida",
+        "unidade": null,
+        "unidade_original": "Mil frutos",
+        "unidade_status": "conflitante",
+        "nivel_id": "N1",
+        "localidade_id": "1",
+        "localidade_nome": "Brasil",
+        "periodo_id": "2006",
+        "classificacoes": [
+          {
+            "classificacao_id": "226",
+            "classificacao_nome": "Produtos da lavoura temporária",
+            "categoria_id": "96608",
+            "categoria_nome": "Amendoim em casca",
+            "categoria_unidade": "Toneladas"
+          },
+          {
+            "classificacao_id": "218",
+            "classificacao_nome": "Condição do produtor em relação às terras",
+            "categoria_id": "4780",
+            "categoria_nome": "Proprietário",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12517",
+            "classificacao_nome": "Grupos de atividade econômica",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "220",
+            "classificacao_nome": "Grupos de área total",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12523",
+            "classificacao_nome": "Grupos de área colhida",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "12617",
+            "classificacao_nome": "Pronafiano",
+            "categoria_id": "0",
+            "categoria_nome": "Total",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "76216",
+        "valor_numerico": 76216,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 1,
+          "serie": 0
+        }
+      }
+    ],
+    "metadados": {
+      "id": "1712",
+      "nome": "Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, condição produtor em relação às terras, grupos de atividade econômica, grupos de área total e grupos de área colhida - (MDA - PRONAF)",
+      "sidra_url": "https://sidra.ibge.gov.br/tabela/1712",
+      "pesquisa": "Censo Agropecuário",
+      "assunto": "Produção vegetal",
+      "periodicidade": {
+        "frequencia": "anual",
+        "inicio": "2006",
+        "fim": "2006"
+      },
+      "niveis": [
+        {
+          "id": "N1",
+          "nome": "Brasil",
+          "grupo": "Administrativo"
+        },
+        {
+          "id": "N2",
+          "nome": "Grande Região",
+          "grupo": "Administrativo"
+        },
+        {
+          "id": "N8",
+          "nome": "Mesorregião Geográfica",
+          "grupo": "Administrativo"
+        },
+        {
+          "id": "N9",
+          "nome": "Microrregião Geográfica",
+          "grupo": "Administrativo"
+        },
+        {
+          "id": "N6",
+          "nome": "Município",
+          "grupo": "Administrativo"
+        },
+        {
+          "id": "N3",
+          "nome": "Unidade da Federação",
+          "grupo": "Administrativo"
+        },
+        {
+          "id": "N132",
+          "nome": "Semiárido",
+          "grupo": "Especial"
+        },
+        {
+          "id": "N133",
+          "nome": "Semiárido de Unidade da Federação",
+          "grupo": "Especial"
+        },
+        {
+          "id": "N129",
+          "nome": "Território da Cidadania",
+          "grupo": "Especial"
+        }
+      ],
+      "variaveis": [
+        {
+          "id": "183",
+          "nome": "Número de estabelecimentos agropecuários",
+          "unidade": "Unidades",
+          "sumarizacao": [
+            "nivelTerritorial"
+          ]
+        },
+        {
+          "id": "214",
+          "nome": "Quantidade produzida",
+          "unidade": "Vide categorias da classificação 'Produtos da lavoura temporária'",
+          "sumarizacao": [
+            "nivelTerritorial"
+          ]
+        },
+        {
+          "id": "1982",
+          "nome": "Quantidade vendida",
+          "unidade": "Vide categorias da classificação 'Produtos da lavoura temporária'",
+          "sumarizacao": [
+            "nivelTerritorial"
+          ]
+        },
+        {
+          "id": "215",
+          "nome": "Valor da produção",
+          "unidade": "Mil Reais",
+          "sumarizacao": [
+            "nivelTerritorial"
+          ]
+        },
+        {
+          "id": "1000215",
+          "nome": "Valor da produção - percentual do total geral",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": "216",
+          "nome": "Área colhida",
+          "unidade": "Hectares",
+          "sumarizacao": [
+            "nivelTerritorial"
+          ]
+        },
+        {
+          "id": "1000216",
+          "nome": "Área colhida - percentual do total geral",
+          "unidade": "%",
+          "sumarizacao": []
+        }
+      ],
+      "classificacoes": [
+        {
+          "id": "226",
+          "nome": "Produtos da lavoura temporária",
+          "sumarizacao": {
+            "status": true,
+            "excecao": [
+              "183",
+              "214",
+              "1982"
+            ]
+          },
+          "categorias": [
+            {
+              "id": "113869",
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": "4844",
+              "nome": "Abacaxi",
+              "unidade": "Mil frutos",
+              "nivel": 1
+            },
+            {
+              "id": "111671",
+              "nome": "Abóbora, moranga, jerimum",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111672",
+              "nome": "Algodão herbáceo",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4847",
+              "nome": "Alho",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "96608",
+              "nome": "Amendoim em casca",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4851",
+              "nome": "Arroz em casca",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111673",
+              "nome": "Aveia branca em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "96609",
+              "nome": "Batata-inglesa",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4857",
+              "nome": "Cana-de-açúcar",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4860",
+              "nome": "Cebola",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4861",
+              "nome": "Centeio em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4862",
+              "nome": "Cevada em casca",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111674",
+              "nome": "Colza (canola)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4864",
+              "nome": "Ervilha em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111685",
+              "nome": "Fava em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111675",
+              "nome": "Feijão preto em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111676",
+              "nome": "Feijão de cor em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111677",
+              "nome": "Feijão fradinho em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4869",
+              "nome": "Feijão verde",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111678",
+              "nome": "Fumo em folha seca",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111679",
+              "nome": "Gergelim (semente)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4872",
+              "nome": "Girassol (semente)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4876",
+              "nome": "Juta (fibra)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4879",
+              "nome": "Linho (fibra)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4882",
+              "nome": "Malva (fibra)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4884",
+              "nome": "Mamona",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4885",
+              "nome": "Mandioca (aipim, macaxeira)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4886",
+              "nome": "Melancia",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4887",
+              "nome": "Melão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4888",
+              "nome": "Milho em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4895",
+              "nome": "Rami (fibra)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4896",
+              "nome": "Soja em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4897",
+              "nome": "Sorgo em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4898",
+              "nome": "Sorgo vassoura",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111680",
+              "nome": "Tomate rasteiro (industrial)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4901",
+              "nome": "Trigo em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111681",
+              "nome": "Trigo preto em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111682",
+              "nome": "Triticale em grão",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111683",
+              "nome": "Forrageiras para corte",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4906",
+              "nome": "Cana forrageira",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4907",
+              "nome": "Milho forrageiro",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "4910",
+              "nome": "Sorgo forrageiro",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111684",
+              "nome": "Sementes de algodão (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111686",
+              "nome": "Sementes de arroz (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111687",
+              "nome": "Sementes de feijão (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111688",
+              "nome": "Sementes de milho (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111689",
+              "nome": "Sementes de soja (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111690",
+              "nome": "Sementes de trigo (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111691",
+              "nome": "Sementes de forrageiras (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111692",
+              "nome": "Sementes de batata-inglesa (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111693",
+              "nome": "Toletes de cana-de-açúcar (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            },
+            {
+              "id": "111694",
+              "nome": "Sementes e outras formas de propagação de outros produtos (produzidas para plantio)",
+              "unidade": "Toneladas",
+              "nivel": 1
+            }
+          ]
+        },
+        {
+          "id": "218",
+          "nome": "Condição do produtor em relação às terras",
+          "sumarizacao": {
+            "status": true,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": "0",
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": "4780",
+              "nome": "Proprietário",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111517",
+              "nome": "Assentado sem titulação definitiva",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "4781",
+              "nome": "Arrendatário",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "4782",
+              "nome": "Parceiro",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "4783",
+              "nome": "Ocupante",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111518",
+              "nome": "Produtor sem área",
+              "unidade": null,
+              "nivel": 1
+            }
+          ]
+        },
+        {
+          "id": "12517",
+          "nome": "Grupos de atividade econômica",
+          "sumarizacao": {
+            "status": true,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": "0",
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": "111519",
+              "nome": "Produção de lavouras temporárias",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111520",
+              "nome": "Horticultura e floricultura",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111521",
+              "nome": "Produção de lavouras permanentes",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111522",
+              "nome": "Produção de sementes e mudas certificadas",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111523",
+              "nome": "Pecuária e criação de outros animais",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111524",
+              "nome": "Produção florestal - florestas plantadas",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111525",
+              "nome": "Produção florestal - florestas nativas",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "114349",
+              "nome": "Pesca",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111526",
+              "nome": "Aquicultura",
+              "unidade": null,
+              "nivel": 1
+            }
+          ]
+        },
+        {
+          "id": "220",
+          "nome": "Grupos de área total",
+          "sumarizacao": {
+            "status": true,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": "0",
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": "111543",
+              "nome": "Mais de 0 a menos de 0,1 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111544",
+              "nome": "De 0,1 a menos de 0,2 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111545",
+              "nome": "De 0,2 a menos de 0,5 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111546",
+              "nome": "De 0,5 a menos de 1 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111547",
+              "nome": "De 1 a menos de 2 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111548",
+              "nome": "De 2 a menos de 3 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111549",
+              "nome": "De 3 a menos de 4 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111550",
+              "nome": "De 4 a menos de 5 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111551",
+              "nome": "De 5 a menos de 10 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111552",
+              "nome": "De 10 a menos de 20 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111553",
+              "nome": "De 20 a menos de 50 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111554",
+              "nome": "De 50 a menos de 100 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111555",
+              "nome": "De 100 a menos de 200 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111556",
+              "nome": "De 200 a menos de 500 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111557",
+              "nome": "De 500 a menos de 1.000 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111558",
+              "nome": "De 1.000 a menos de 2.500 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111559",
+              "nome": "De 2.500 ha e mais",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111560",
+              "nome": "Produtor sem área",
+              "unidade": null,
+              "nivel": 1
+            }
+          ]
+        },
+        {
+          "id": "12523",
+          "nome": "Grupos de área colhida",
+          "sumarizacao": {
+            "status": true,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": "0",
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": "111617",
+              "nome": "Maior de 0 a menos de 1 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111618",
+              "nome": "De 1 a menos de 2 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111619",
+              "nome": "De 2 a menos de 5 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111620",
+              "nome": "De 5 a menos de 10 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111621",
+              "nome": "De 10 a menos de 20 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111622",
+              "nome": "De 20 a menos de 50 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111623",
+              "nome": "De 50 a menos de 100 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111624",
+              "nome": "De 100 a menos de 200 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111625",
+              "nome": "De 200 a menos de 500 ha",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111626",
+              "nome": "De 500 ha e mais",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "111627",
+              "nome": "Sem declaração",
+              "unidade": null,
+              "nivel": 1
+            }
+          ]
+        },
+        {
+          "id": "12617",
+          "nome": "Pronafiano",
+          "sumarizacao": {
+            "status": true,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": "0",
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": "12098",
+              "nome": "Não pronafiano",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "113888",
+              "nome": "Pronaf A",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "113889",
+              "nome": "Pronaf B",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "113890",
+              "nome": "Pronaf C",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "113891",
+              "nome": "Pronaf D",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": "113892",
+              "nome": "Pronaf E",
+              "unidade": null,
+              "nivel": 1
+            }
+          ]
+        }
+      ],
+      "periodos": [
+        {
+          "id": "2006",
+          "literals": [
+            "2006"
+          ],
+          "modificacao": "19/10/2012",
+          "ordem": 0
+        }
+      ]
+    },
+    "warnings": [
+      {
+        "code": "unit_metadata_conflict",
+        "message": "Unidade das séries difere da unidade da categoria; gráfico e resumo suspensos para esta combinação.",
+        "details": {
+          "variavel_id": "214",
+          "categoria_id": "96608",
+          "unidade_original": "Mil frutos",
+          "unidade_categoria": [
+            "Toneladas"
+          ]
+        }
+      },
+      {
+        "code": "unit_metadata_conflict",
+        "message": "Unidade das séries difere da unidade da categoria; gráfico e resumo suspensos para esta combinação.",
+        "details": {
+          "variavel_id": "1982",
+          "categoria_id": "96608",
+          "unidade_original": "Mil frutos",
+          "unidade_categoria": [
+            "Toneladas"
+          ]
+        }
+      }
+    ],
+    "truncated": false,
+    "normalizer_version": "v1"
+  },
+  "sources": [
+    {
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados?acervo=N",
+      "fetched_at": "2026-10-13T18:22:38.666177+00:00",
+      "cache_hit": false,
+      "expires_at": "2026-10-13T19:22:38.666177+00:00"
+    },
+    {
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados/1712/metadados",
+      "fetched_at": "2026-10-13T18:22:40.722186+00:00",
+      "cache_hit": false,
+      "expires_at": "2026-10-13T19:22:40.722186+00:00"
+    },
+    {
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados/1712/periodos",
+      "fetched_at": "2026-10-13T18:22:41.326527+00:00",
+      "cache_hit": false,
+      "expires_at": "2026-10-13T19:22:41.326527+00:00"
+    },
+    {
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados/1712/periodos/2006/variaveis/214|1982?classificacao=226%5B4844%2C96608%5D%7C218%5B4780%5D%7C12517%5B0%5D%7C220%5B0%5D%7C12523%5B0%5D%7C12617%5B0%5D&localidades=BR",
+      "fetched_at": "2026-10-13T18:22:45.115002+00:00",
+      "cache_hit": false,
+      "expires_at": "2026-10-13T18:27:45.115002+00:00"
+    }
+  ]
+}

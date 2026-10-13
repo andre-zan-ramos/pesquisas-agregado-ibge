@@ -1,0 +1,109 @@
+{
+  "kind": "official_dataset",
+  "authorization_scope": "Execução da fase 0 solicitada em 13/10/2026; lote manual limitado de referência.",
+  "maximum_requests": 8,
+  "maximum_estimated_series_observations": 4,
+  "files": [
+    {
+      "path": "acervo_A.json",
+      "status": "captured",
+      "kind": "official_dataset",
+      "body_representation": "complete_json_reserialized",
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados?acervo=A",
+      "fetched_at": "2026-10-13T18:22:37.122004+00:00",
+      "cache_hit": false,
+      "http_status": 200,
+      "sha256": "204066888568bbca0e524ecdd12df24c39f173aa9b3fe1de2156d55d57666bc6",
+      "bytes": 17388
+    },
+    {
+      "path": "acervo_N.json",
+      "status": "captured",
+      "kind": "official_dataset",
+      "body_representation": "complete_json_reserialized",
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados?acervo=N",
+      "fetched_at": "2026-10-13T18:22:38.666177+00:00",
+      "cache_hit": false,
+      "http_status": 200,
+      "sha256": "418f1b2cbaf7ca125081a8b429f22ab6d2baf3169344b47f42f532d9daa9e7ac",
+      "bytes": 4528
+    },
+    {
+      "path": "acervo_P.json",
+      "status": "captured",
+      "kind": "official_dataset",
+      "body_representation": "complete_json_reserialized",
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados?acervo=P",
+      "fetched_at": "2026-10-13T18:22:39.416580+00:00",
+      "cache_hit": false,
+      "http_status": 200,
+      "sha256": "0d1174551e0a158fa978e289bd02669cc5636a4f5a64e23e27263273b4638e79",
+      "bytes": 63558
+    },
+    {
+      "path": "metadados_1712.json",
+      "status": "captured",
+      "kind": "official_dataset",
+      "body_representation": "complete_json_reserialized",
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados/1712/metadados",
+      "fetched_at": "2026-10-13T18:22:40.722186+00:00",
+      "cache_hit": false,
+      "http_status": 200,
+      "sha256": "7bdbfaacd90320528823d6e14f228fd6de404ae058c7910cd929822eb7b87f07",
+      "bytes": 18085
+    },
+    {
+      "path": "periodos_1712.json",
+      "status": "captured",
+      "kind": "official_dataset",
+      "body_representation": "complete_json_reserialized",
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados/1712/periodos",
+      "fetched_at": "2026-10-13T18:22:41.326527+00:00",
+      "cache_hit": false,
+      "http_status": 200,
+      "sha256": "f98fee8210a4b55132e1b6a51727da29937917fa26a82294a7c493e85e965557",
+      "bytes": 100
+    },
+    {
+      "path": "localidades_1712_N1.json",
+      "status": "captured",
+      "kind": "official_dataset",
+      "body_representation": "complete_json_reserialized",
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados/1712/localidades/N1",
+      "fetched_at": "2026-10-13T18:22:42.888327+00:00",
+      "cache_hit": false,
+      "http_status": 200,
+      "sha256": "af6d5520d91075b3c0805fbb53c368b8ef51d7149a48a7d06c4a138b019531db",
+      "bytes": 111
+    },
+    {
+      "path": "catalogo_226_N1.json",
+      "status": "captured",
+      "kind": "official_dataset",
+      "body_representation": "complete_json_reserialized",
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados?classificacao=226&nivel=N1&periodo=2006",
+      "fetched_at": "2026-10-13T18:22:43.526460+00:00",
+      "cache_hit": false,
+      "http_status": 200,
+      "sha256": "209649b3ffd7c69423130ceb565832ad9a264647e2dfb113572e36f4d58f119b",
+      "bytes": 5028
+    },
+    {
+      "path": "series_1712.json",
+      "status": "captured",
+      "kind": "official_dataset",
+      "body_representation": "complete_json_reserialized",
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados/1712/periodos/2006/variaveis/214|1982?classificacao=226%5B4844%2C96608%5D%7C218%5B4780%5D%7C12517%5B0%5D%7C220%5B0%5D%7C12523%5B0%5D%7C12617%5B0%5D&localidades=BR",
+      "fetched_at": "2026-10-13T18:22:45.115002+00:00",
+      "cache_hit": false,
+      "http_status": 200,
+      "sha256": "a9e08e1fbbf456915205e7a0c969e291daa8c261ede9cb444fa764caf5437d81",
+      "bytes": 5918
+    }
+  ],
+  "resolved_query": {
+    "path": "consulta_1712.json",
+    "kind": "resolved_query",
+    "sha256": "a60cc9f2b082e4f9376310846510e0e9a137c3c881ce1554523e9317e95e09fe"
+  }
+}

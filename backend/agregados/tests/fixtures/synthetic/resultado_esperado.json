@@ -1,0 +1,699 @@
+{
+  "data": {
+    "consulta_aplicada": {
+      "agregado_id": "900001",
+      "nivel_id": "N6",
+      "localidade_ids": [
+        "0000001",
+        "0000002"
+      ],
+      "variavel_ids": [
+        "000101",
+        "102"
+      ],
+      "periodo_ids": [
+        "202401",
+        "202403"
+      ],
+      "classificacoes": [
+        {
+          "classificacao_id": "9001",
+          "categoria_ids": [
+            "01",
+            "02"
+          ]
+        },
+        {
+          "classificacao_id": "9002",
+          "categoria_ids": [
+            "00"
+          ]
+        }
+      ]
+    },
+    "observacoes": [
+      {
+        "agregado_id": "900001",
+        "variavel_id": "000101",
+        "variavel_nome": "Indicador sintético A",
+        "unidade": "Unidades",
+        "nivel_id": "N6",
+        "localidade_id": "0000001",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202401",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "01",
+            "categoria_nome": "Grupo A",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "10",
+        "valor_numerico": 10,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 0,
+          "serie": 0
+        },
+        "unidade_original": "Unidades",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "000101",
+        "variavel_nome": "Indicador sintético A",
+        "unidade": "Unidades",
+        "nivel_id": "N6",
+        "localidade_id": "0000001",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202403",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "01",
+            "categoria_nome": "Grupo A",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "10",
+        "valor_numerico": 10,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 0,
+          "serie": 0
+        },
+        "unidade_original": "Unidades",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "000101",
+        "variavel_nome": "Indicador sintético A",
+        "unidade": "Unidades",
+        "nivel_id": "N6",
+        "localidade_id": "0000002",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202401",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "01",
+            "categoria_nome": "Grupo A",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "X",
+        "valor_numerico": null,
+        "valor_status": "marcador",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 0,
+          "serie": 1
+        },
+        "unidade_original": "Unidades",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "000101",
+        "variavel_nome": "Indicador sintético A",
+        "unidade": "Unidades",
+        "nivel_id": "N6",
+        "localidade_id": "0000002",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202403",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "01",
+            "categoria_nome": "Grupo A",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "...",
+        "valor_numerico": null,
+        "valor_status": "marcador",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 0,
+          "serie": 1
+        },
+        "unidade_original": "Unidades",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "000101",
+        "variavel_nome": "Indicador sintético A",
+        "unidade": "Unidades",
+        "nivel_id": "N6",
+        "localidade_id": "0000001",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202401",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "02",
+            "categoria_nome": "Grupo B",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "-1.25",
+        "valor_numerico": -1.25,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 1,
+          "serie": 0
+        },
+        "unidade_original": "Unidades",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "000101",
+        "variavel_nome": "Indicador sintético A",
+        "unidade": "Unidades",
+        "nivel_id": "N6",
+        "localidade_id": "0000001",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202403",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "02",
+            "categoria_nome": "Grupo B",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "1.25",
+        "valor_numerico": 1.25,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 1,
+          "serie": 0
+        },
+        "unidade_original": "Unidades",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "000101",
+        "variavel_nome": "Indicador sintético A",
+        "unidade": "Unidades",
+        "nivel_id": "N6",
+        "localidade_id": "0000002",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202401",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "02",
+            "categoria_nome": "Grupo B",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "..",
+        "valor_numerico": null,
+        "valor_status": "marcador",
+        "origem_indice": {
+          "variavel": 0,
+          "resultado": 1,
+          "serie": 1
+        },
+        "unidade_original": "Unidades",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "102",
+        "variavel_nome": "Indicador sintético B",
+        "unidade": "Percentual",
+        "nivel_id": "N6",
+        "localidade_id": "0000001",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202401",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "01",
+            "categoria_nome": "Grupo A",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "-",
+        "valor_numerico": null,
+        "valor_status": "marcador",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 0,
+          "serie": 0
+        },
+        "unidade_original": "Percentual",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "102",
+        "variavel_nome": "Indicador sintético B",
+        "unidade": "Percentual",
+        "nivel_id": "N6",
+        "localidade_id": "0000001",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202403",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "01",
+            "categoria_nome": "Grupo A",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "0",
+        "valor_numerico": 0,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 0,
+          "serie": 0
+        },
+        "unidade_original": "Percentual",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "102",
+        "variavel_nome": "Indicador sintético B",
+        "unidade": "Percentual",
+        "nivel_id": "N6",
+        "localidade_id": "0000002",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202401",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "01",
+            "categoria_nome": "Grupo A",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "",
+        "valor_numerico": null,
+        "valor_status": "vazio",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 0,
+          "serie": 1
+        },
+        "unidade_original": "Percentual",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "102",
+        "variavel_nome": "Indicador sintético B",
+        "unidade": "Percentual",
+        "nivel_id": "N6",
+        "localidade_id": "0000002",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202403",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "01",
+            "categoria_nome": "Grupo A",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": null,
+        "valor_numerico": null,
+        "valor_status": "nulo",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 0,
+          "serie": 1
+        },
+        "unidade_original": "Percentual",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "102",
+        "variavel_nome": "Indicador sintético B",
+        "unidade": "Percentual",
+        "nivel_id": "N6",
+        "localidade_id": "0000001",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202401",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "02",
+            "categoria_nome": "Grupo B",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "não reconhecido",
+        "valor_numerico": null,
+        "valor_status": "nao_reconhecido",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 1,
+          "serie": 0
+        },
+        "unidade_original": "Percentual",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "102",
+        "variavel_nome": "Indicador sintético B",
+        "unidade": "Percentual",
+        "nivel_id": "N6",
+        "localidade_id": "0000001",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202403",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "02",
+            "categoria_nome": "Grupo B",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "x",
+        "valor_numerico": null,
+        "valor_status": "marcador",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 1,
+          "serie": 0
+        },
+        "unidade_original": "Percentual",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "102",
+        "variavel_nome": "Indicador sintético B",
+        "unidade": "Percentual",
+        "nivel_id": "N6",
+        "localidade_id": "0000002",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202401",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "02",
+            "categoria_nome": "Grupo B",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "-0.00",
+        "valor_numerico": -0.0,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 1,
+          "serie": 1
+        },
+        "unidade_original": "Percentual",
+        "unidade_status": "coerente"
+      },
+      {
+        "agregado_id": "900001",
+        "variavel_id": "102",
+        "variavel_nome": "Indicador sintético B",
+        "unidade": "Percentual",
+        "nivel_id": "N6",
+        "localidade_id": "0000002",
+        "localidade_nome": "Localidade homônima",
+        "periodo_id": "202403",
+        "classificacoes": [
+          {
+            "classificacao_id": "9001",
+            "classificacao_nome": "Grupo sintético",
+            "categoria_id": "02",
+            "categoria_nome": "Grupo B",
+            "categoria_unidade": null
+          },
+          {
+            "classificacao_id": "9002",
+            "classificacao_nome": "Condição sintética",
+            "categoria_id": "00",
+            "categoria_nome": "Condição A",
+            "categoria_unidade": null
+          }
+        ],
+        "valor_original": "0.25",
+        "valor_numerico": 0.25,
+        "valor_status": "numerico",
+        "origem_indice": {
+          "variavel": 1,
+          "resultado": 1,
+          "serie": 1
+        },
+        "unidade_original": "Percentual",
+        "unidade_status": "coerente"
+      }
+    ],
+    "metadados": {
+      "id": "900001",
+      "nome": "Agregado sintético com classificações",
+      "sidra_url": "https://sidra.ibge.gov.br/tabela/900001",
+      "pesquisa": "Pesquisa sintética",
+      "assunto": "Assunto sintético",
+      "periodicidade": {
+        "frequencia": "Mensal",
+        "inicio": "202401",
+        "fim": "202403"
+      },
+      "niveis": [
+        {
+          "id": "N6",
+          "nome": "Município",
+          "grupo": "Administrativo"
+        },
+        {
+          "id": "N123",
+          "nome": "Bioma",
+          "grupo": "Especial"
+        },
+        {
+          "id": "N18",
+          "nome": "Área de ponderação",
+          "grupo": "IBGE"
+        }
+      ],
+      "variaveis": [
+        {
+          "id": "000101",
+          "nome": "Indicador sintético A",
+          "unidade": "Unidades",
+          "sumarizacao": [
+            "nivelTerritorial"
+          ]
+        },
+        {
+          "id": "102",
+          "nome": "Indicador sintético B",
+          "unidade": "Percentual",
+          "sumarizacao": []
+        }
+      ],
+      "classificacoes": [
+        {
+          "id": "9001",
+          "nome": "Grupo sintético",
+          "sumarizacao": {
+            "status": true,
+            "excecao": [
+              "102"
+            ]
+          },
+          "categorias": [
+            {
+              "id": "01",
+              "nome": "Grupo A",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": "02",
+              "nome": "Grupo B",
+              "unidade": null,
+              "nivel": 0
+            }
+          ]
+        },
+        {
+          "id": "9002",
+          "nome": "Condição sintética",
+          "sumarizacao": {
+            "status": false,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": "00",
+              "nome": "Condição A",
+              "unidade": null,
+              "nivel": 0
+            }
+          ]
+        }
+      ],
+      "periodos": [
+        {
+          "id": "202401",
+          "literals": [
+            "Janeiro 2024",
+            "Jan 2024"
+          ],
+          "modificacao": "2024-04-01",
+          "ordem": 0
+        },
+        {
+          "id": "202403",
+          "literals": [
+            "Março 2024"
+          ],
+          "modificacao": "2024-04-01",
+          "ordem": 1
+        }
+      ]
+    },
+    "warnings": [
+      {
+        "code": "periodo_ausente",
+        "message": "Uma série não retornou todos os períodos selecionados."
+      }
+    ],
+    "truncated": false,
+    "normalizer_version": "v1"
+  },
+  "sources": [
+    {
+      "source_url": "https://servicodados.ibge.gov.br/api/v3/agregados/900001/periodos/202401%7C202403/variaveis/000101%7C102?classificacao=9001%5B01%2C02%5D%7C9002%5B00%5D&localidades=N6%5B0000001%2C0000002%5D",
+      "fetched_at": "2026-10-13T18:00:00Z",
+      "expires_at": "2026-10-13T18:05:00Z",
+      "cache_hit": false
+    }
+  ]
+}

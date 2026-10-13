@@ -1,0 +1,63 @@
+{
+  "kind": "synthetic",
+  "captured_from_ibge": false,
+  "reference_aggregate_id": "900001",
+  "files": [
+    {
+      "path": "synthetic/acervos.json",
+      "sha256": "21335015a9b30299727fd22421675eaa7efa45f450bc8a0d9b95f8e7e4355acc"
+    },
+    {
+      "path": "synthetic/catalogo.json",
+      "sha256": "05c8bbbb965be9cf0f9aa022326060382d1107ab23a91045e4fffe909d4f03a7"
+    },
+    {
+      "path": "synthetic/consulta.json",
+      "sha256": "83d38b44a1b40e715bb7afa579252882175f84f73f77644df50fa4eeaa8735bf"
+    },
+    {
+      "path": "synthetic/erro.json",
+      "sha256": "550746b343e7357112237108300819390150beb043afa9cc7b52fd892de86f48"
+    },
+    {
+      "path": "synthetic/estatisticas_casos.json",
+      "sha256": "c093e212e295e7c42c92c0eafafa4f0dbd87e74028399efdfe0ce82dcb35d179"
+    },
+    {
+      "path": "synthetic/localidades.json",
+      "sha256": "909467f67e0b80fa9da8a46e4f8c0131a30698fc50c87c52d796baac30497ccf"
+    },
+    {
+      "path": "synthetic/metadados.json",
+      "sha256": "76b4671663a880a68dea75572bdd606677e609ddf895a6089863fac01d24519d"
+    },
+    {
+      "path": "synthetic/metadados_normalizados.json",
+      "sha256": "e06bf57e2db1e4ae3c174b56b7925dbfcdc4149930f281347575ab2380c4d863"
+    },
+    {
+      "path": "synthetic/municipios_enriquecimento.json",
+      "sha256": "e3afab62f37589057f9bdbf7fe3ae0fbbe618a0bc33bf28cc697f6151b4bea1d"
+    },
+    {
+      "path": "synthetic/periodos.json",
+      "sha256": "734100a1ceab89101f2cbe0b9db352c69c9dcfcc7d369f19baf267fe3c292710"
+    },
+    {
+      "path": "synthetic/resultado_esperado.json",
+      "sha256": "9950d80ca40d45b63ea57bfcae683d49e6b3b71cbdef2ab7e9b397ef606940d0"
+    },
+    {
+      "path": "synthetic/series.json",
+      "sha256": "063999fe7a67d0582cf15c9ab7e5256b57be89ced0b40766ce505991aee93fec"
+    },
+    {
+      "path": "synthetic/series_conflito.json",
+      "sha256": "a3547d5a3a3b829717ad17ab48e4d50411aab64a908a18e0df6c78e056e0c771"
+    },
+    {
+      "path": "synthetic/series_vazias.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    }
+  ]
+}

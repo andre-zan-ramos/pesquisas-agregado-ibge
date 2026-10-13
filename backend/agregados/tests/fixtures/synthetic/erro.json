@@ -1,0 +1,9 @@
+{
+  "error": {
+    "code": "invalid_selection",
+    "message": "Categoria não pertence à classificação.",
+    "details": {
+      "field": "classificacoes"
+    }
+  }
+}

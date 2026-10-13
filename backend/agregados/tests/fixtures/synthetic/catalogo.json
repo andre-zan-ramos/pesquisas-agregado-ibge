@@ -1,0 +1,12 @@
+[
+  {
+    "id": "SINTETICA",
+    "nome": "Pesquisa sintética",
+    "agregados": [
+      {
+        "id": 900001,
+        "nome": "Agregado sintético com classificações"
+      }
+    ]
+  }
+]

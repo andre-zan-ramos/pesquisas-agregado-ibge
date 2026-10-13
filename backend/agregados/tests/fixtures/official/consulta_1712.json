@@ -1,0 +1,53 @@
+{
+  "agregado_id": "1712",
+  "nivel_id": "N1",
+  "localidade_ids": [
+    "1"
+  ],
+  "variavel_ids": [
+    "214",
+    "1982"
+  ],
+  "periodo_ids": [
+    "2006"
+  ],
+  "classificacoes": [
+    {
+      "classificacao_id": "226",
+      "categoria_ids": [
+        "4844",
+        "96608"
+      ]
+    },
+    {
+      "classificacao_id": "218",
+      "categoria_ids": [
+        "4780"
+      ]
+    },
+    {
+      "classificacao_id": "12517",
+      "categoria_ids": [
+        "0"
+      ]
+    },
+    {
+      "classificacao_id": "220",
+      "categoria_ids": [
+        "0"
+      ]
+    },
+    {
+      "classificacao_id": "12523",
+      "categoria_ids": [
+        "0"
+      ]
+    },
+    {
+      "classificacao_id": "12617",
+      "categoria_ids": [
+        "0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "id": "N15",
+    "literal": "Aglomeração Urbana"
+  },
+  {
+    "id": "N17",
+    "literal": "Aglomerado Subnormal"
+  },
+  {
+    "id": "N131",
+    "literal": "Amazônia Legal"
+  },
+  {
+    "id": "N134",
+    "literal": "Amazônia Legal de Unidade da Federação"
+  },
+  {
+    "id": "N20",
+    "literal": "Área de Divulgação da Amostra para Aglomerados Subnormais"
+  },
+  {
+    "id": "N1105",
+    "literal": "Área de influência - PNSB"
+  },
+  {
+    "id": "N18",
+    "literal": "Área de Ponderação"
+  },
+  {
+    "id": "N23",
+    "literal": "Arranjo Populacional"
+  },
+  {
+    "id": "N102",
+    "literal": "Bairro"
+  },
+  {
+    "id": "N123",
+    "literal": "Bioma"
+  },
+  {
+    "id": "N1",
+    "literal": "Brasil"
+  },
+  {
+    "id": "N1100",
+    "literal": "Brasil, sem especificação de Unidade da Federação"
+  },
+  {
+    "id": "N130",
+    "literal": "Capital/não capital de Unidade da Federação"
+  },
+  {
+    "id": "N151",
+    "literal": "Categoria da Aglomeração Urbana"
+  },
+  {
+    "id": "N71",
+    "literal": "Categoria Metropolitana"
+  },
+  {
+    "id": "N33",
+    "literal": "Concentração Urbana"
+  },
+  {
+    "id": "N1124",
+    "literal": "Coordenação Regional da Funai"
+  },
+  {
+    "id": "N124",
+    "literal": "Corpo d'água"
+  },
+  {
+    "id": "N10",
+    "literal": "Distrito"
+  },
+  {
+    "id": "N1102",
+    "literal": "Estrangeiro"
+  },
+  {
+    "id": "N170",
+    "literal": "Favela e Comunidade Urbana 2022"
+  },
+  {
+    "id": "N2",
+    "literal": "Grande Região"
+  },
+  {
+    "id": "N122",
+    "literal": "Grande Região - PIMES"
+  },
+  {
+    "id": "N1101",
+    "literal": "Ignorado"
+  },
+  {
+    "id": "N137",
+    "literal": "Matopiba"
+  },
+  {
+    "id": "N138",
+    "literal": "Matopiba de Unidade da Federação"
+  },
+  {
+    "id": "N8",
+    "literal": "Mesorregião Geográfica"
+  },
+  {
+    "id": "N9",
+    "literal": "Microrregião Geográfica"
+  },
+  {
+    "id": "N6",
+    "literal": "Município"
+  },
+  {
+    "id": "N1011",
+    "literal": "Municípios Costeiros"
+  },
+  {
+    "id": "N1012",
+    "literal": "Municípios Costeiros de Unidade da Federação"
+  },
+  {
+    "id": "N1013",
+    "literal": "Municípios de Faixa de Fronteira"
+  },
+  {
+    "id": "N1014",
+    "literal": "Municípios de Faixa de Fronteira de Unidade da Federação"
+  },
+  {
+    "id": "N127",
+    "literal": "Núcleo de desertificação"
+  },
+  {
+    "id": "N101",
+    "literal": "País do Mercosul, Bolívia e Chile"
+  },
+  {
+    "id": "N128",
+    "literal": "Praia"
+  },
+  {
+    "id": "N70",
+    "literal": "Recortes Metropolitanos"
+  },
+  {
+    "id": "N25",
+    "literal": "Região Geográfica Imediata"
+  },
+  {
+    "id": "N24",
+    "literal": "Região Geográfica Intermediária"
+  },
+  {
+    "id": "N121",
+    "literal": "Região Hidrográfica"
+  },
+  {
+    "id": "N14",
+    "literal": "Região Integrada de Desenvolvimento até 2020"
+  },
+  {
+    "id": "N7",
+    "literal": "Região Metropolitana até 2020"
+  },
+  {
+    "id": "N13",
+    "literal": "Região Metropolitana e Subdivisão até 2020"
+  },
+  {
+    "id": "N132",
+    "literal": "Semiárido"
+  },
+  {
+    "id": "N133",
+    "literal": "Semiárido de Unidade da Federação"
+  },
+  {
+    "id": "N72",
+    "literal": "Subcategoria Metropolitana"
+  },
+  {
+    "id": "N11",
+    "literal": "Subdistrito"
+  },
+  {
+    "id": "N1125",
+    "literal": "Terra Indígena"
+  },
+  {
+    "id": "N125",
+    "literal": "Terra Indígena por Unidade da Federação"
+  },
+  {
+    "id": "N129",
+    "literal": "Território da Cidadania"
+  },
+  {
+    "id": "N29",
+    "literal": "Território de Identidade"
+  },
+  {
+    "id": "N1145",
+    "literal": "Território Quilombola"
+  },
+  {
+    "id": "N145",
+    "literal": "Território Quilombola por Unidade da Federação"
+  },
+  {
+    "id": "N1103",
+    "literal": "Total"
+  },
+  {
+    "id": "N110",
+    "literal": "Total das áreas - PME"
+  },
+  {
+    "id": "N103",
+    "literal": "Total das áreas - POF"
+  },
+  {
+    "id": "N22",
+    "literal": "Total dos municípios das capitais"
+  },
+  {
+    "id": "N21",
+    "literal": "Total dos municípios das capitais da Grande Região"
+  },
+  {
+    "id": "N3",
+    "literal": "Unidade da Federação"
+  },
+  {
+    "id": "N1104",
+    "literal": "Unidade da Federação, sem especificação de Município"
+  },
+  {
+    "id": "N1126",
+    "literal": "Unidade de Conservação"
+  },
+  {
+    "id": "N126",
+    "literal": "Unidade de Conservação por Unidade da Federação"
+  },
+  {
+    "id": "N111",
+    "literal": "Unidade Federativa do Mercosul, Bolívia e Chile"
+  }
+]

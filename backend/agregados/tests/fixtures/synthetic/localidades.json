@@ -1,0 +1,18 @@
+[
+  {
+    "id": "0000001",
+    "nome": "Localidade homônima",
+    "nivel": {
+      "id": "N6",
+      "nome": "Município"
+    }
+  },
+  {
+    "id": "0000002",
+    "nome": "Localidade homônima",
+    "nivel": {
+      "id": "N6",
+      "nome": "Município"
+    }
+  }
+]

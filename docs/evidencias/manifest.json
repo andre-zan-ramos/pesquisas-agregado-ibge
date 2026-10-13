@@ -1,0 +1,10 @@
+{
+  "kind": "official_documentation",
+  "official_dataset_captures": 0,
+  "source_url": "https://servicodados.ibge.gov.br/api/docs/agregados?versao=3",
+  "retrieved_at": "2026-10-13T18:15:19.216903+00:00",
+  "document_sha256": "5e78f0a61a874e890d9d2130a7748e325b3819abbf5d92d7c3cade6c693c840f",
+  "extract": "api-v3-definitions.json",
+  "extract_sha256": "56ef7e2d34342149f930df08995199c4eece05785c5816049d460cf123547297",
+  "transformation": "Extracao de defs JavaScript JSON; somente campos estruturais; descriptions/title removidos."
+}

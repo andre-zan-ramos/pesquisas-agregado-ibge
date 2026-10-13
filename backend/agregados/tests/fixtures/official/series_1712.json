@@ -1,0 +1,260 @@
+[
+  {
+    "id": "214",
+    "variavel": "Quantidade produzida",
+    "unidade": "Mil frutos",
+    "resultados": [
+      {
+        "classificacoes": [
+          {
+            "id": "226",
+            "nome": "Produtos da lavoura temporária",
+            "categoria": {
+              "4844": "Abacaxi"
+            }
+          },
+          {
+            "id": "218",
+            "nome": "Condição do produtor em relação às terras",
+            "categoria": {
+              "4780": "Proprietário"
+            }
+          },
+          {
+            "id": "12517",
+            "nome": "Grupos de atividade econômica",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "220",
+            "nome": "Grupos de área total",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "12523",
+            "nome": "Grupos de área colhida",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "12617",
+            "nome": "Pronafiano",
+            "categoria": {
+              "0": "Total"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "1",
+              "nivel": {
+                "id": "N1",
+                "nome": "Brasil"
+              },
+              "nome": "Brasil"
+            },
+            "serie": {
+              "2006": "456692"
+            }
+          }
+        ]
+      },
+      {
+        "classificacoes": [
+          {
+            "id": "226",
+            "nome": "Produtos da lavoura temporária",
+            "categoria": {
+              "96608": "Amendoim em casca"
+            }
+          },
+          {
+            "id": "218",
+            "nome": "Condição do produtor em relação às terras",
+            "categoria": {
+              "4780": "Proprietário"
+            }
+          },
+          {
+            "id": "12517",
+            "nome": "Grupos de atividade econômica",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "220",
+            "nome": "Grupos de área total",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "12523",
+            "nome": "Grupos de área colhida",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "12617",
+            "nome": "Pronafiano",
+            "categoria": {
+              "0": "Total"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "1",
+              "nivel": {
+                "id": "N1",
+                "nome": "Brasil"
+              },
+              "nome": "Brasil"
+            },
+            "serie": {
+              "2006": "86804"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1982",
+    "variavel": "Quantidade vendida",
+    "unidade": "Mil frutos",
+    "resultados": [
+      {
+        "classificacoes": [
+          {
+            "id": "226",
+            "nome": "Produtos da lavoura temporária",
+            "categoria": {
+              "4844": "Abacaxi"
+            }
+          },
+          {
+            "id": "218",
+            "nome": "Condição do produtor em relação às terras",
+            "categoria": {
+              "4780": "Proprietário"
+            }
+          },
+          {
+            "id": "12517",
+            "nome": "Grupos de atividade econômica",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "220",
+            "nome": "Grupos de área total",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "12523",
+            "nome": "Grupos de área colhida",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "12617",
+            "nome": "Pronafiano",
+            "categoria": {
+              "0": "Total"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "1",
+              "nivel": {
+                "id": "N1",
+                "nome": "Brasil"
+              },
+              "nome": "Brasil"
+            },
+            "serie": {
+              "2006": "424883"
+            }
+          }
+        ]
+      },
+      {
+        "classificacoes": [
+          {
+            "id": "226",
+            "nome": "Produtos da lavoura temporária",
+            "categoria": {
+              "96608": "Amendoim em casca"
+            }
+          },
+          {
+            "id": "218",
+            "nome": "Condição do produtor em relação às terras",
+            "categoria": {
+              "4780": "Proprietário"
+            }
+          },
+          {
+            "id": "12517",
+            "nome": "Grupos de atividade econômica",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "220",
+            "nome": "Grupos de área total",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "12523",
+            "nome": "Grupos de área colhida",
+            "categoria": {
+              "0": "Total"
+            }
+          },
+          {
+            "id": "12617",
+            "nome": "Pronafiano",
+            "categoria": {
+              "0": "Total"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "1",
+              "nivel": {
+                "id": "N1",
+                "nome": "Brasil"
+              },
+              "nome": "Brasil"
+            },
+            "serie": {
+              "2006": "76216"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+{
+  "id": "900001",
+  "nome": "Agregado sintético com classificações",
+  "sidra_url": "https://sidra.ibge.gov.br/tabela/900001",
+  "pesquisa": "Pesquisa sintética",
+  "assunto": "Assunto sintético",
+  "periodicidade": {
+    "frequencia": "Mensal",
+    "inicio": "202401",
+    "fim": "202403"
+  },
+  "niveis": [
+    {
+      "id": "N6",
+      "nome": "Município",
+      "grupo": "Administrativo"
+    },
+    {
+      "id": "N123",
+      "nome": "Bioma",
+      "grupo": "Especial"
+    },
+    {
+      "id": "N18",
+      "nome": "Área de ponderação",
+      "grupo": "IBGE"
+    }
+  ],
+  "variaveis": [
+    {
+      "id": "000101",
+      "nome": "Indicador sintético A",
+      "unidade": "Unidades",
+      "sumarizacao": [
+        "nivelTerritorial"
+      ]
+    },
+    {
+      "id": "102",
+      "nome": "Indicador sintético B",
+      "unidade": "Percentual",
+      "sumarizacao": []
+    }
+  ],
+  "classificacoes": [
+    {
+      "id": "9001",
+      "nome": "Grupo sintético",
+      "sumarizacao": {
+        "status": true,
+        "excecao": [
+          "102"
+        ]
+      },
+      "categorias": [
+        {
+          "id": "01",
+          "nome": "Grupo A",
+          "unidade": null,
+          "nivel": 0
+        },
+        {
+          "id": "02",
+          "nome": "Grupo B",
+          "unidade": null,
+          "nivel": 0
+        }
+      ]
+    },
+    {
+      "id": "9002",
+      "nome": "Condição sintética",
+      "sumarizacao": {
+        "status": false,
+        "excecao": []
+      },
+      "categorias": [
+        {
+          "id": "00",
+          "nome": "Condição A",
+          "unidade": null,
+          "nivel": 0
+        }
+      ]
+    }
+  ],
+  "periodos": [
+    {
+      "id": "202401",
+      "literals": [
+        "Janeiro 2024",
+        "Jan 2024"
+      ],
+      "modificacao": "2024-04-01",
+      "ordem": 0
+    },
+    {
+      "id": "202403",
+      "literals": [
+        "Março 2024"
+      ],
+      "modificacao": "2024-04-01",
+      "ordem": 1
+    }
+  ]
+}

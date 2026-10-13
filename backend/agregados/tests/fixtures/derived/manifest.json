@@ -1,0 +1,12 @@
+{
+  "kind": "derived_example",
+  "source_capture": "../official/manifest.json",
+  "not_an_api_capture": true,
+  "provenance_note": "Valores/IDs e fetched_at/source_url/cache_hit provêm das capturas; envelope é exemplo do contrato. expires_at foi calculado para o exemplo com TTL configurado na fase 1 (3600 s catálogo; 300 s séries); não é uma data publicada pelo IBGE.",
+  "files": [
+    {
+      "path": "resultado_1712_esperado.json",
+      "sha256": "9b70cca4460aa2059f22c2dcf91937c75a98ef4649dcc0220a59d026da43aa5b"
+    }
+  ]
+}

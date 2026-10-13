@@ -1,0 +1,294 @@
+{
+  "Agregado": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "nome": {
+        "type": "string"
+      }
+    }
+  },
+  "agregadosagregadolocalidadesnivel_nivel": {
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "nome": {
+        "type": "string"
+      }
+    }
+  },
+  "Indicador": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "variavel": {
+        "type": "string"
+      },
+      "unidade": {
+        "type": "string"
+      },
+      "resultados": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Indicador_resultados"
+        }
+      }
+    }
+  },
+  "Indicador_classificacoes": {
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "nome": {
+        "type": "string"
+      },
+      "categoria": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "Indicador_localidade": {
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "nivel": {
+        "$ref": "#/definitions/Indicador_localidade_nivel"
+      },
+      "nome": {
+        "type": "string"
+      }
+    }
+  },
+  "Indicador_localidade_nivel": {
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "nome": {
+        "type": "string"
+      }
+    }
+  },
+  "Indicador_resultados": {
+    "properties": {
+      "classificacoes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Indicador_classificacoes"
+        }
+      },
+      "series": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Indicador_series"
+        }
+      }
+    }
+  },
+  "Indicador_series": {
+    "properties": {
+      "localidade": {
+        "$ref": "#/definitions/Indicador_localidade"
+      },
+      "serie": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {}
+        }
+      }
+    }
+  },
+  "inline_response_200": {
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "nome": {
+        "type": "string"
+      },
+      "nivel": {
+        "$ref": "#/definitions/agregadosagregadolocalidadesnivel_nivel"
+      }
+    }
+  },
+  "inline_response_200_1": {
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "literals": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "modificacao": {
+        "type": "string"
+      }
+    }
+  },
+  "Metadado": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "nome": {
+        "type": "string"
+      },
+      "URL": {
+        "type": "string"
+      },
+      "pesquisa": {
+        "type": "string"
+      },
+      "assunto": {
+        "type": "string"
+      },
+      "periodicidade": {
+        "$ref": "#/definitions/Metadado_periodicidade"
+      },
+      "nivelTerritorial": {
+        "$ref": "#/definitions/Metadado_nivelTerritorial"
+      },
+      "variaveis": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Metadado_variaveis"
+        }
+      },
+      "classificacoes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Metadado_classificacoes"
+        }
+      }
+    }
+  },
+  "Metadado_categorias": {
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "nome": {
+        "type": "string"
+      },
+      "unidade": {
+        "type": "string"
+      },
+      "nivel": {
+        "type": "number"
+      }
+    }
+  },
+  "Metadado_classificacoes": {
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "nome": {
+        "type": "string"
+      },
+      "sumarizacao": {
+        "$ref": "#/definitions/Metadado_sumarizacao"
+      },
+      "categorias": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Metadado_categorias"
+        }
+      }
+    }
+  },
+  "Metadado_nivelTerritorial": {
+    "properties": {
+      "Administrativo": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "Especial": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "IBGE": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "Metadado_periodicidade": {
+    "properties": {
+      "frequencia": {
+        "type": "string"
+      },
+      "inicio": {
+        "type": "string"
+      },
+      "fim": {
+        "type": "string"
+      }
+    }
+  },
+  "Metadado_sumarizacao": {
+    "properties": {
+      "status": {
+        "type": "boolean"
+      },
+      "excecao": {
+        "type": "array"
+      }
+    }
+  },
+  "Metadado_variaveis": {
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "nome": {
+        "type": "string"
+      },
+      "unidade": {
+        "type": "string"
+      },
+      "sumarizacao": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "Pesquisa": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "nome": {
+        "type": "string"
+      },
+      "agregados": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Agregado"
+        }
+      }
+    }
+  }
+}

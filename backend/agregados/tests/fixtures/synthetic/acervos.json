@@ -1,0 +1,32 @@
+{
+  "A": [
+    {
+      "id": "001",
+      "literal": "Assunto sintético"
+    }
+  ],
+  "N": [
+    {
+      "id": "N6",
+      "literal": "Município"
+    },
+    {
+      "id": "N123",
+      "literal": "Bioma"
+    },
+    {
+      "id": "N18",
+      "literal": "Área de ponderação"
+    }
+  ],
+  "P": [
+    {
+      "id": "202401",
+      "literal": "Janeiro 2024"
+    },
+    {
+      "id": "202403",
+      "literal": "Março 2024"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+[
+  {
+    "id": "000101",
+    "variavel": "Indicador sintético A",
+    "unidade": "Unidades",
+    "resultados": [
+      {
+        "classificacoes": [
+          {
+            "id": "9001",
+            "nome": "Grupo sintético",
+            "categoria": {
+              "01": "Grupo A"
+            }
+          },
+          {
+            "id": "9002",
+            "nome": "Condição sintética",
+            "categoria": {
+              "00": "Condição A"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "0000001",
+              "nome": "Localidade homônima",
+              "nivel": null
+            },
+            "serie": {
+              "202401": "10",
+              "202403": "10"
+            }
+          },
+          {
+            "localidade": {
+              "id": "0000002",
+              "nome": "Localidade homônima",
+              "nivel": null
+            },
+            "serie": {
+              "202401": "X",
+              "202403": "..."
+            }
+          }
+        ]
+      },
+      {
+        "classificacoes": [
+          {
+            "id": "9001",
+            "nome": "Grupo sintético",
+            "categoria": {
+              "02": "Grupo B"
+            }
+          },
+          {
+            "id": "9002",
+            "nome": "Condição sintética",
+            "categoria": {
+              "00": "Condição A"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "0000001",
+              "nome": "Localidade homônima",
+              "nivel": null
+            },
+            "serie": {
+              "202401": "-1.25",
+              "202403": "1.25"
+            }
+          },
+          {
+            "localidade": {
+              "id": "0000002",
+              "nome": "Localidade homônima",
+              "nivel": null
+            },
+            "serie": {
+              "202401": ".."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "102",
+    "variavel": "Indicador sintético B",
+    "unidade": "Percentual",
+    "resultados": [
+      {
+        "classificacoes": [
+          {
+            "id": "9001",
+            "nome": "Grupo sintético",
+            "categoria": {
+              "01": "Grupo A"
+            }
+          },
+          {
+            "id": "9002",
+            "nome": "Condição sintética",
+            "categoria": {
+              "00": "Condição A"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "0000001",
+              "nome": "Localidade homônima",
+              "nivel": null
+            },
+            "serie": {
+              "202401": "-",
+              "202403": "0"
+            }
+          },
+          {
+            "localidade": {
+              "id": "0000002",
+              "nome": "Localidade homônima",
+              "nivel": null
+            },
+            "serie": {
+              "202401": "",
+              "202403": null
+            }
+          }
+        ]
+      },
+      {
+        "classificacoes": [
+          {
+            "id": "9001",
+            "nome": "Grupo sintético",
+            "categoria": {
+              "02": "Grupo B"
+            }
+          },
+          {
+            "id": "9002",
+            "nome": "Condição sintética",
+            "categoria": {
+              "00": "Condição A"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "0000001",
+              "nome": "Localidade homônima",
+              "nivel": null
+            },
+            "serie": {
+              "202401": "não reconhecido",
+              "202403": "x"
+            }
+          },
+          {
+            "localidade": {
+              "id": "0000002",
+              "nome": "Localidade homônima",
+              "nivel": null
+            },
+            "serie": {
+              "202401": "-0.00",
+              "202403": "0.25"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

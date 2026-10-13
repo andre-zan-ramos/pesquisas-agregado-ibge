@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+
+# Manter os bytes usados nos manifests SHA-256, inclusive terminadores CRLF.
+backend/agregados/tests/fixtures/**/*.json -text whitespace=cr-at-eol
+docs/evidencias/*.json -text whitespace=cr-at-eol

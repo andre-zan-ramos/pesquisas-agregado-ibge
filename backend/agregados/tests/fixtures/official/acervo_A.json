@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "148",
+    "literal": "Abastecimento de água"
+  },
+  {
+    "id": "70",
+    "literal": "Abate de animais"
+  },
+  {
+    "id": "110",
+    "literal": "Acesso a esgotamento sanitário"
+  },
+  {
+    "id": "147",
+    "literal": "Acesso à internet"
+  },
+  {
+    "id": "107",
+    "literal": "Acesso a serviço de coleta de lixo doméstico"
+  },
+  {
+    "id": "146",
+    "literal": "Acesso a serviços de telefonia"
+  },
+  {
+    "id": "109",
+    "literal": "Acesso a sistema de abastecimento de água"
+  },
+  {
+    "id": "316",
+    "literal": "Acidentes"
+  },
+  {
+    "id": "221",
+    "literal": "Acidentes, violência e segurança"
+  },
+  {
+    "id": "128",
+    "literal": "Adequação de moradia"
+  },
+  {
+    "id": "245",
+    "literal": "Agenda 21 Local"
+  },
+  {
+    "id": "208",
+    "literal": "Aglomerado subnormal"
+  },
+  {
+    "id": "88",
+    "literal": "Agricultura Familiar"
+  },
+  {
+    "id": "78",
+    "literal": "Agroindústria rural"
+  },
+  {
+    "id": "296",
+    "literal": "Água potável e saneamento"
+  },
+  {
+    "id": "163",
+    "literal": "Alimentação"
+  },
+  {
+    "id": "188",
+    "literal": "Alojamento e/ou alimentação"
+  },
+  {
+    "id": "181",
+    "literal": "Antropometria"
+  },
+  {
+    "id": "49",
+    "literal": "Aquisição"
+  },
+  {
+    "id": "230",
+    "literal": "Aquisição de produtos alimentícios"
+  },
+  {
+    "id": "97",
+    "literal": "Área remanescente e desflorestamento na Mata Atlântica e nas formações vegetais litorâneas"
+  },
+  {
+    "id": "104",
+    "literal": "Áreas protegidas"
+  },
+  {
+    "id": "248",
+    "literal": "Articulações interinstitucionais"
+  },
+  {
+    "id": "223",
+    "literal": "Asma"
+  },
+  {
+    "id": "315",
+    "literal": "Atenção primária à saúde"
+  },
+  {
+    "id": "62",
+    "literal": "Atividade"
+  },
+  {
+    "id": "165",
+    "literal": "Atividade física"
+  },
+  {
+    "id": "189",
+    "literal": "Atividades imobiliárias"
+  },
+  {
+    "id": "133",
+    "literal": "Balança comercial"
+  },
+  {
+    "id": "100",
+    "literal": "Balneabilidade"
+  },
+  {
+    "id": "332",
+    "literal": "Biodiversidade"
+  },
+  {
+    "id": "306",
+    "literal": "Boa saúde e bem-estar"
+  },
+  {
+    "id": "310",
+    "literal": "Características adicionais do mercado de trabalho"
+  },
+  {
+    "id": "214",
+    "literal": "Características básicas"
+  },
+  {
+    "id": "290",
+    "literal": "Características da escola"
+  },
+  {
+    "id": "161",
+    "literal": "Características da pessoa"
+  },
+  {
+    "id": "162",
+    "literal": "Características do domicílio"
+  },
+  {
+    "id": "313",
+    "literal": "Características do domicílio e serviços domiciliares de saúde"
+  },
+  {
+    "id": "317",
+    "literal": "Características do trabalho e apoio social"
+  },
+  {
+    "id": "43",
+    "literal": "Características dos estabelecimentos agropecuários "
+  },
+  {
+    "id": "44",
+    "literal": "Características dos produtores agropecuários "
+  },
+  {
+    "id": "175",
+    "literal": "Características gerais da população"
+  },
+  {
+    "id": "210",
+    "literal": "Características gerais dos indígenas"
+  },
+  {
+    "id": "4",
+    "literal": "Casamentos"
+  },
+  {
+    "id": "297",
+    "literal": "Cidades e comunidades sustentáveis"
+  },
+  {
+    "id": "314",
+    "literal": "Cobertura de plano de saúde"
+  },
+  {
+    "id": "129",
+    "literal": "Coeficiente de mortalidade por homicídios ou por acidentes de transporte"
+  },
+  {
+    "id": "141",
+    "literal": "Coleta seletiva de lixo"
+  },
+  {
+    "id": "83",
+    "literal": "Comércio"
+  },
+  {
+    "id": "243",
+    "literal": "Comitês de Bacias Hidrográficas"
+  },
+  {
+    "id": "218",
+    "literal": "Comportamento alimentar"
+  },
+  {
+    "id": "92",
+    "literal": "Concentração de poluentes no ar em áreas urbanas"
+  },
+  {
+    "id": "309",
+    "literal": "Confederação da Agricultura e Pecuária do Brasil (CNA)"
+  },
+  {
+    "id": "79",
+    "literal": "Construção civil"
+  },
+  {
+    "id": "51",
+    "literal": "Consumo alimentar"
+  },
+  {
+    "id": "135",
+    "literal": "Consumo de energia per capita"
+  },
+  {
+    "id": "138",
+    "literal": "Consumo mineral per capita"
+  },
+  {
+    "id": "81",
+    "literal": "Contas Nacionais e Regionais"
+  },
+  {
+    "id": "217",
+    "literal": "Contexto familiar"
+  },
+  {
+    "id": "216",
+    "literal": "Contexto socioeconômico"
+  },
+  {
+    "id": "59",
+    "literal": "Cor ou raça"
+  },
+  {
+    "id": "184",
+    "literal": "Correio e/ou telecomunicações"
+  },
+  {
+    "id": "71",
+    "literal": "Couro"
+  },
+  {
+    "id": "330",
+    "literal": "Covid-19"
+  },
+  {
+    "id": "277",
+    "literal": "Crianças com menos de 2 anos"
+  },
+  {
+    "id": "60",
+    "literal": "Deficiência"
+  },
+  {
+    "id": "80",
+    "literal": "Desenvolvimento sustentável"
+  },
+  {
+    "id": "98",
+    "literal": "Desertificação e arenização"
+  },
+  {
+    "id": "96",
+    "literal": "Desflorestamento na Amazônia Legal"
+  },
+  {
+    "id": "213",
+    "literal": "Deslocamento"
+  },
+  {
+    "id": "207",
+    "literal": "Desmatamento do Cerrado"
+  },
+  {
+    "id": "249",
+    "literal": "Desmatamento nos Biomas"
+  },
+  {
+    "id": "50",
+    "literal": "Despesa"
+  },
+  {
+    "id": "108",
+    "literal": "Destinação final do lixo"
+  },
+  {
+    "id": "6",
+    "literal": "Divórcios"
+  },
+  {
+    "id": "268",
+    "literal": "Doenças crônicas"
+  },
+  {
+    "id": "124",
+    "literal": "Doenças relacionadas ao saneamento ambiental inadequado"
+  },
+  {
+    "id": "318",
+    "literal": "Doenças transmissíveis"
+  },
+  {
+    "id": "20",
+    "literal": "Domicílios"
+  },
+  {
+    "id": "27",
+    "literal": "Educação"
+  },
+  {
+    "id": "302",
+    "literal": "Educação de qualidade"
+  },
+  {
+    "id": "156",
+    "literal": "Emigração"
+  },
+  {
+    "id": "91",
+    "literal": "Emissões de origem antrópica dos gases associados ao efeito estufa"
+  },
+  {
+    "id": "173",
+    "literal": "Emprego"
+  },
+  {
+    "id": "198",
+    "literal": "Empresarial não-financeiro"
+  },
+  {
+    "id": "12",
+    "literal": "Empresas"
+  },
+  {
+    "id": "54",
+    "literal": "Empresas e outras organizações"
+  },
+  {
+    "id": "298",
+    "literal": "Energia limpa e acessível"
+  },
+  {
+    "id": "186",
+    "literal": "Engenharia e arquitetura"
+  },
+  {
+    "id": "41",
+    "literal": "Entidades sem fins lucrativos"
+  },
+  {
+    "id": "229",
+    "literal": "Equipamentos de ensino"
+  },
+  {
+    "id": "304",
+    "literal": "Erradicação da pobreza"
+  },
+  {
+    "id": "127",
+    "literal": "Escolaridade"
+  },
+  {
+    "id": "215",
+    "literal": "Escolaridade materna e paterna"
+  },
+  {
+    "id": "149",
+    "literal": "Esgotamento sanitário"
+  },
+  {
+    "id": "103",
+    "literal": "Espécies extintas e ameaçadas de extinção"
+  },
+  {
+    "id": "106",
+    "literal": "Espécies invasoras"
+  },
+  {
+    "id": "119",
+    "literal": "Esperança de vida ao nascer"
+  },
+  {
+    "id": "85",
+    "literal": "Estoques agropecuários"
+  },
+  {
+    "id": "157",
+    "literal": "Etnia"
+  },
+  {
+    "id": "143",
+    "literal": "Existência de conselhos municipais"
+  },
+  {
+    "id": "75",
+    "literal": "Extração vegetal"
+  },
+  {
+    "id": "331",
+    "literal": "Faces de logradouros"
+  },
+  {
+    "id": "19",
+    "literal": "Famílias"
+  },
+  {
+    "id": "18",
+    "literal": "Fecundidade"
+  },
+  {
+    "id": "77",
+    "literal": "Floricultura"
+  },
+  {
+    "id": "58",
+    "literal": "Fome zero e agricultura sustentável"
+  },
+  {
+    "id": "235",
+    "literal": "Frequência escolar"
+  },
+  {
+    "id": "42",
+    "literal": "Fundações e Associações sem fins lucrativos"
+  },
+  {
+    "id": "320",
+    "literal": "Furto e roubo"
+  },
+  {
+    "id": "145",
+    "literal": "Gasto público com proteção ao meio ambiente"
+  },
+  {
+    "id": "144",
+    "literal": "Gastos com Pesquisa e Desenvolvimento - P D"
+  },
+  {
+    "id": "295",
+    "literal": "Geral"
+  },
+  {
+    "id": "153",
+    "literal": "Gestão municipal de saneamento básico"
+  },
+  {
+    "id": "134",
+    "literal": "Grau de endividamento"
+  },
+  {
+    "id": "222",
+    "literal": "Higiene e saúde bucal"
+  },
+  {
+    "id": "76",
+    "literal": "Horticultura"
+  },
+  {
+    "id": "209",
+    "literal": "Hospedagem"
+  },
+  {
+    "id": "273",
+    "literal": "Idosos"
+  },
+  {
+    "id": "130",
+    "literal": "Igualdade de gênero"
+  },
+  {
+    "id": "293",
+    "literal": "Imagem corporal"
+  },
+  {
+    "id": "224",
+    "literal": "Imagem corporal, atitude em relação ao peso corporal e estado nutricional"
+  },
+  {
+    "id": "122",
+    "literal": "Imunização contra doenças infecciosas infantis"
+  },
+  {
+    "id": "234",
+    "literal": "Incidência de AIDS"
+  },
+  {
+    "id": "254",
+    "literal": "Indicadores demográficos"
+  },
+  {
+    "id": "115",
+    "literal": "Índice de Gini da distribuição do rendimento"
+  },
+  {
+    "id": "200",
+    "literal": "Índice de Preços ao Produtor"
+  },
+  {
+    "id": "82",
+    "literal": "Índices de preços"
+  },
+  {
+    "id": "87",
+    "literal": "Indústria"
+  },
+  {
+    "id": "303",
+    "literal": "Indústria, inovação e infraestrutura"
+  },
+  {
+    "id": "195",
+    "literal": "Informação e comunicação"
+  },
+  {
+    "id": "86",
+    "literal": "Informações básicas municipais"
+  },
+  {
+    "id": "291",
+    "literal": "Informações gerais"
+  },
+  {
+    "id": "183",
+    "literal": "Informática"
+  },
+  {
+    "id": "179",
+    "literal": "Instrução e Educação"
+  },
+  {
+    "id": "136",
+    "literal": "Intensidade energética"
+  },
+  {
+    "id": "201",
+    "literal": "Internet"
+  },
+  {
+    "id": "24",
+    "literal": "Lavouras permanentes"
+  },
+  {
+    "id": "23",
+    "literal": "Lavouras temporárias"
+  },
+  {
+    "id": "25",
+    "literal": "Lavouras temporárias e permanentes"
+  },
+  {
+    "id": "72",
+    "literal": "Leite"
+  },
+  {
+    "id": "151",
+    "literal": "Limpeza urbana e Coleta de lixo"
+  },
+  {
+    "id": "158",
+    "literal": "Língua falada"
+  },
+  {
+    "id": "154",
+    "literal": "Manejo de águas pluviais"
+  },
+  {
+    "id": "155",
+    "literal": "Manejo de resíduos sólidos"
+  },
+  {
+    "id": "197",
+    "literal": "Manutenção e reparação"
+  },
+  {
+    "id": "274",
+    "literal": "Meio ambiente"
+  },
+  {
+    "id": "329",
+    "literal": "Mercado de trabalho"
+  },
+  {
+    "id": "15",
+    "literal": "Migração"
+  },
+  {
+    "id": "61",
+    "literal": "Migração e deslocamento"
+  },
+  {
+    "id": "160",
+    "literal": "Mortalidade"
+  },
+  {
+    "id": "152",
+    "literal": "Movimentação financeira"
+  },
+  {
+    "id": "233",
+    "literal": "Mulheres em trabalhos formais"
+  },
+  {
+    "id": "1",
+    "literal": "Nascidos vivos"
+  },
+  {
+    "id": "65",
+    "literal": "Nupcialidade"
+  },
+  {
+    "id": "177",
+    "literal": "Nupcialidade e fecundidade"
+  },
+  {
+    "id": "2",
+    "literal": "Óbitos"
+  },
+  {
+    "id": "3",
+    "literal": "Óbitos fetais"
+  },
+  {
+    "id": "123",
+    "literal": "Oferta de serviços básicos de saúde"
+  },
+  {
+    "id": "244",
+    "literal": "Organizações da Sociedade Civil"
+  },
+  {
+    "id": "191",
+    "literal": "Outras atividades de serviços"
+  },
+  {
+    "id": "308",
+    "literal": "Outras formas de trabalho"
+  },
+  {
+    "id": "73",
+    "literal": "Ovos de galinha"
+  },
+  {
+    "id": "299",
+    "literal": "Parcerias e meios de implementação"
+  },
+  {
+    "id": "137",
+    "literal": "Participação de fontes renováveis na oferta de energia"
+  },
+  {
+    "id": "319",
+    "literal": "Paternidade e pré-natal do parceiro"
+  },
+  {
+    "id": "275",
+    "literal": "Patrimônio cultural"
+  },
+  {
+    "id": "300",
+    "literal": "Paz, justiça e instituições eficazes"
+  },
+  {
+    "id": "40",
+    "literal": "Pecuária"
+  },
+  {
+    "id": "269",
+    "literal": "Percepção do estado de saúde"
+  },
+  {
+    "id": "45",
+    "literal": "Pessoal ocupado"
+  },
+  {
+    "id": "52",
+    "literal": "Pessoas"
+  },
+  {
+    "id": "262",
+    "literal": "População desocupada"
+  },
+  {
+    "id": "114",
+    "literal": "População e terras indígenas"
+  },
+  {
+    "id": "327",
+    "literal": "População indígena"
+  },
+  {
+    "id": "328",
+    "literal": "População quilombola"
+  },
+  {
+    "id": "102",
+    "literal": "População residente em áreas costeiras"
+  },
+  {
+    "id": "276",
+    "literal": "Pré-natal"
+  },
+  {
+    "id": "121",
+    "literal": "Prevalência de desnutrição total"
+  },
+  {
+    "id": "101",
+    "literal": "Produção de pescado marítima e continental"
+  },
+  {
+    "id": "47",
+    "literal": "Produção vegetal"
+  },
+  {
+    "id": "131",
+    "literal": "Produto Interno Bruto per capita"
+  },
+  {
+    "id": "66",
+    "literal": "Programas Sociais do Governo"
+  },
+  {
+    "id": "187",
+    "literal": "Publicidade"
+  },
+  {
+    "id": "99",
+    "literal": "Qualidade das águas interiores"
+  },
+  {
+    "id": "95",
+    "literal": "Queimadas e incêndios florestais"
+  },
+  {
+    "id": "227",
+    "literal": "Razão de dependência"
+  },
+  {
+    "id": "192",
+    "literal": "Receitas"
+  },
+  {
+    "id": "140",
+    "literal": "Reciclagem"
+  },
+  {
+    "id": "46",
+    "literal": "Redução das desigualdades"
+  },
+  {
+    "id": "253",
+    "literal": "Registro civil"
+  },
+  {
+    "id": "159",
+    "literal": "Registro de nascimento"
+  },
+  {
+    "id": "142",
+    "literal": "Rejeitos radioativos: geração e armazenamento"
+  },
+  {
+    "id": "57",
+    "literal": "Religião"
+  },
+  {
+    "id": "28",
+    "literal": "Rendimento"
+  },
+  {
+    "id": "312",
+    "literal": "Rendimento de todas as fontes"
+  },
+  {
+    "id": "228",
+    "literal": "Rendimento domiciliar per capita"
+  },
+  {
+    "id": "117",
+    "literal": "Rendimento familiar per capita"
+  },
+  {
+    "id": "118",
+    "literal": "Rendimento médio mensal"
+  },
+  {
+    "id": "53",
+    "literal": "Responsável pelo domicílio/família"
+  },
+  {
+    "id": "67",
+    "literal": "Saúde"
+  },
+  {
+    "id": "272",
+    "literal": "Saúde da mulher"
+  },
+  {
+    "id": "225",
+    "literal": "Saúde mental"
+  },
+  {
+    "id": "219",
+    "literal": "Saúde sexual e reprodutiva"
+  },
+  {
+    "id": "172",
+    "literal": "Segurança"
+  },
+  {
+    "id": "68",
+    "literal": "Segurança alimentar"
+  },
+  {
+    "id": "321",
+    "literal": "Sensação de segurança"
+  },
+  {
+    "id": "5",
+    "literal": "Separações"
+  },
+  {
+    "id": "84",
+    "literal": "Serviços"
+  },
+  {
+    "id": "185",
+    "literal": "Serviços audiovisuais"
+  },
+  {
+    "id": "193",
+    "literal": "Serviços empresariais não-financeiros"
+  },
+  {
+    "id": "190",
+    "literal": "Serviços prestados às empresas"
+  },
+  {
+    "id": "194",
+    "literal": "Serviços prestados às famílias"
+  },
+  {
+    "id": "196",
+    "literal": "Serviços profissionais, administrativos e complementares"
+  },
+  {
+    "id": "74",
+    "literal": "Silvicultura"
+  },
+  {
+    "id": "292",
+    "literal": "Situações em casa e na escola"
+  },
+  {
+    "id": "232",
+    "literal": "Tabaco na escola"
+  },
+  {
+    "id": "203",
+    "literal": "Tabagismo"
+  },
+  {
+    "id": "126",
+    "literal": "Taxa de alfabetização"
+  },
+  {
+    "id": "112",
+    "literal": "Taxa de crescimento da população"
+  },
+  {
+    "id": "116",
+    "literal": "Taxa de desocupação"
+  },
+  {
+    "id": "125",
+    "literal": "Taxa de escolarização"
+  },
+  {
+    "id": "113",
+    "literal": "Taxa de fecundidade"
+  },
+  {
+    "id": "132",
+    "literal": "Taxa de investimento"
+  },
+  {
+    "id": "120",
+    "literal": "Taxa de mortalidade infantil"
+  },
+  {
+    "id": "180",
+    "literal": "Tecnologia da Informação"
+  },
+  {
+    "id": "212",
+    "literal": "Tecnologia de informação e comunicação"
+  },
+  {
+    "id": "322",
+    "literal": "Teletrabalho"
+  },
+  {
+    "id": "94",
+    "literal": "Terras em uso agrossilvipastoril"
+  },
+  {
+    "id": "211",
+    "literal": "Terras indígenas"
+  },
+  {
+    "id": "63",
+    "literal": "Território"
+  },
+  {
+    "id": "326",
+    "literal": "Territórios quilombolas"
+  },
+  {
+    "id": "17",
+    "literal": "Trabalho"
+  },
+  {
+    "id": "325",
+    "literal": "Trabalho de crianças e adolescentes"
+  },
+  {
+    "id": "301",
+    "literal": "Trabalho decente e crescimento econômico"
+  },
+  {
+    "id": "176",
+    "literal": "Trabalho e rendimento"
+  },
+  {
+    "id": "199",
+    "literal": "Trabalho infantil"
+  },
+  {
+    "id": "323",
+    "literal": "Trabalho por meio de plataformas digitais"
+  },
+  {
+    "id": "105",
+    "literal": "Tráfico, criação e comércio de animais silvestres"
+  },
+  {
+    "id": "182",
+    "literal": "Transportes"
+  },
+  {
+    "id": "111",
+    "literal": "Tratamento de esgoto"
+  },
+  {
+    "id": "311",
+    "literal": "Turismo"
+  },
+  {
+    "id": "13",
+    "literal": "Unidades locais"
+  },
+  {
+    "id": "93",
+    "literal": "Uso de agrotóxicos"
+  },
+  {
+    "id": "168",
+    "literal": "Uso de álcool"
+  },
+  {
+    "id": "167",
+    "literal": "Uso de cigarro"
+  },
+  {
+    "id": "169",
+    "literal": "Uso de drogas"
+  },
+  {
+    "id": "90",
+    "literal": "Uso de fertilizantes"
+  },
+  {
+    "id": "226",
+    "literal": "Uso de serviço de saúde"
+  },
+  {
+    "id": "69",
+    "literal": "Valores monetários na agropecuária"
+  },
+  {
+    "id": "305",
+    "literal": "Vida na água"
+  },
+  {
+    "id": "170",
+    "literal": "Vida sexual"
+  },
+  {
+    "id": "307",
+    "literal": "Vida terrestre"
+  },
+  {
+    "id": "139",
+    "literal": "Vida útil das reservas minerais"
+  },
+  {
+    "id": "171",
+    "literal": "Violência"
+  }
+]

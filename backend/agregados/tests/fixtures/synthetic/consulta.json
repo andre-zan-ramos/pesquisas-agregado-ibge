@@ -1,0 +1,31 @@
+{
+  "agregado_id": "900001",
+  "nivel_id": "N6",
+  "localidade_ids": [
+    "0000001",
+    "0000002"
+  ],
+  "variavel_ids": [
+    "000101",
+    "102"
+  ],
+  "periodo_ids": [
+    "202401",
+    "202403"
+  ],
+  "classificacoes": [
+    {
+      "classificacao_id": "9001",
+      "categoria_ids": [
+        "01",
+        "02"
+      ]
+    },
+    {
+      "classificacao_id": "9002",
+      "categoria_ids": [
+        "00"
+      ]
+    }
+  ]
+}
