@@ -20,4 +20,16 @@ button { font: inherit; cursor: pointer; padding: 6px 12px; border: 1px solid #b
 button:disabled { cursor: wait; opacity: .6; }
 a:focus-visible, button:focus-visible { outline: 3px solid #348673; outline-offset: 4px; }
 footer { margin-top: 80px; color: #7a8982; font-size: 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; }
+.picker { border: 0; margin: 16px 0; padding: 0; min-width: 0; }
+legend, .catalog-search { font-weight: 600; font-size: 14px; }
+input, select { display: block; width: 100%; min-width: 0; font: inherit; padding: 12px; margin-top: 8px; border: 1px solid #b8cdc0; border-radius: 6px; color: #193736; background: white; }
+select { text-overflow: ellipsis; }
+input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid #348673; outline-offset: 2px; }
+nav { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin: 18px 0; }
+.metadata { margin-top: 36px; padding-top: 24px; border-top: 1px solid #d8e2dd; }
+details { margin: 16px 0; padding: 16px; background: #edf3ef; border-radius: 8px; overflow-wrap: anywhere; }
+summary { cursor: pointer; font-weight: 600; }
+h3 { font-size: 16px; margin-bottom: 8px; }
+li { margin: 8px 0; } .metadata h2 { overflow-wrap: anywhere; }
 @media (max-width: 600px) { main { padding: 26px 22px; }.intro { margin-top: 64px; }.welcome { padding: 22px; gap: 16px; }.tag { font-size: 13px; } }

@@ -1,6 +1,6 @@
 # Pesquisas por agregados do IBGE
 
-Base independente em Django/DRF e React/TypeScript/Vite. Fase 0: contrato, esquemas e amostras. Fase 1: infraestrutura, cliente IBGE e tela inicial. Catálogo, filtros e séries serão entregues nas próximas fases do [plano](PLANO_IMPLEMENTACAO.md).
+Base independente em Django/DRF e React/TypeScript/Vite. Fase 0: contrato, esquemas e amostras. Fase 1: infraestrutura e cliente IBGE. Fase 2: descoberta de pesquisas/agregados e metadados completos. Editor e séries permanecem nas próximas fases do [plano](PLANO_IMPLEMENTACAO.md).
 
 ## Preparação no Windows
 
@@ -48,10 +48,17 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1 -WithTes
 .\.venv\Scripts\python.exe backend\manage.py check
 .\.venv\Scripts\python.exe backend\manage.py test agregados.tests --settings=config.test_settings -v 2
 cd web
+npm run typecheck
 npm run build
+npx playwright install chromium
+npm run test:browser
 ```
 
 `-WithTests` instala também `backend/requirements-dev.txt` para validar JSON Schema. Os testes do transporte usam `httpx.MockTransport`; os testes de contrato leem capturas já salvas e fixtures sintéticas, sem rede ou banco. O endpoint `health/` confirma somente que Django responde; não verifica disponibilidade do IBGE. Não há modelos ou migrações nesta fase; o backend de banco configurado é `dummy`.
+
+Os testes Chromium iniciam seus próprios servidores em 8828/5198, usando `scripts/serve_phase2_fixtures.py` com transporte exclusivamente simulado. Precisam da `.venv` local e do navegador Playwright instalado; `playwright install` baixa a ferramenta, sem consultar dados IBGE. Os servidores encerram ao finalizar a suíte. Abrir o launcher normal e usar a descoberta faz consultas de catálogo/metadados ao IBGE, respeitando cache e limites do transporte.
+
+Rotas da fase 2: `GET dominios/`, `GET pesquisas/` e `GET agregados/{id}/metadados/`, sob `/api/v1/agregados-ibge/`. Respostas usam `data` e `sources`; filtros, paginação e busca são descritos em [FASE_2.md](docs/FASE_2.md).
 
 ## Configuração e contratos
 

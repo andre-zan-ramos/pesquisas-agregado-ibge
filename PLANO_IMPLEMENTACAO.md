@@ -1,6 +1,6 @@
 # Explorador de agregados do IBGE — análise e implementação por fases
 
-Data: 13/10/2026. Situação: fases 0 e 1 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fases 2–6 pendentes. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md) e [docs/FASE_1.md](docs/FASE_1.md).
+Data: 13/10/2026. Situação: fases 0, 1 e 2 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fases 3–6 pendentes. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md) e [docs/FASE_2.md](docs/FASE_2.md).
 
 ## 1. Objetivo e escopo
 
@@ -186,6 +186,8 @@ Aceite: backend inicia, frontend compila, configuração não contém segredos e
 
 ### Fase 2 — descoberta de pesquisas e agregados
 
+Situação: concluída em 13/10/2026. API de domínios/pesquisas/metadados, serializers, seleção React encadeada e metadados completos entregues. Validação offline: 44 testes de backend (incluindo fases 0/1), 10 testes Chromium, typecheck e build aprovados. Hashes das capturas preservados; nenhuma nova consulta ao IBGE. Critérios, limites e handoff em [docs/FASE_2.md](docs/FASE_2.md).
+
 Entregas: API de domínio/catálogo/metadados e tela de assunto, nível, período de descoberta, pesquisa e agregado. Busca por código/nome e seleção encadeada. Exibir níveis e metadados completos.
 
 Aceite: N6 inicial quando disponível; filtros não deixam seleções incompatíveis; catálogo vazio e falha têm estados distintos; respostas obsoletas não sobrescrevem estado; selecionar catálogo não chama séries.
@@ -239,4 +241,4 @@ Mapas, banco histórico de todas as pesquisas, carga integral, agendamentos, com
 
 Registrar: fase concluída; arquivos e contratos alterados; comportamento entregue; validação e resultados; evidências oficiais versus sintéticas; limitações; decisões pendentes; próxima fase. Não marcar fase concluída por mera existência dos arquivos se os critérios de aceite não passaram.
 
-Próximo pedido sugerido: **“Implementar apenas a fase 2 do PLANO_IMPLEMENTACAO.md, seguindo docs/contrato-api.md e as capturas da fase 0.”** A fase 0 fechou o contrato com exemplos sintéticos e oito capturas oficiais limitadas, incluindo quatro observações de séries. Não ampliar consultas ou avançar fases automaticamente.
+Próximo pedido sugerido: **“Implementar apenas a fase 3 do PLANO_IMPLEMENTACAO.md, seguindo docs/contrato-api.md e docs/FASE_2.md.”** A fase 2 concluiu a descoberta com validação offline e preservou as oito capturas oficiais limitadas da fase 0. Não ampliar consultas ou avançar fases automaticamente.

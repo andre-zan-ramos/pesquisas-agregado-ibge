@@ -8,3 +8,5 @@ dist/
 var/
 *.sqlite3
 coverage/
+web/test-results/
+web/playwright-report/
