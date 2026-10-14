@@ -1,0 +1,23 @@
+{
+  "files.watcherExclude": {
+    "var/dev/**": true,
+    "web/test-results/**": true
+  },
+  "search.exclude": {
+    "var/dev/**": true,
+    "web/test-results/**": true
+  },
+  "python.analysis.exclude": [
+    ".git",
+    ".venv",
+    "web/node_modules",
+    "web/dist",
+    "web/test-results",
+    "var/dev",
+    "**/__pycache__",
+    "**/.pytest_cache",
+    "**/.mypy_cache",
+    "**/.ruff_cache",
+    "**/.ipynb_checkpoints"
+  ]
+}
