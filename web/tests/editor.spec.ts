@@ -64,6 +64,41 @@ test('localidades: vazio e falha recuperável', async ({ page }) => {
   await expect(page.getByText('Nenhum item encontrado em Localidades da consulta.')).toBeVisible()
 })
 
+test('campo único busca localidades fora da página e preserva a seleção', async ({ page }) => {
+  await page.route(`**${prefix}/agregados/900001/localidades/**`, async route => {
+    const url = new URL(route.request().url())
+    url.searchParams.set('page_size', '1')
+    await route.fulfill({ response: await route.fetch({ url: url.toString() }) })
+  })
+  await choose(page)
+  await page.getByRole('checkbox', { name: /0000001/ }).check()
+  await expect(page.getByRole('checkbox', { name: /0000002/ })).toHaveCount(0)
+  const search = page.getByLabel('Buscar localidades por código ou nome', { exact: true })
+  await expect(search).toHaveCount(1)
+  await search.fill('0000002')
+  await expect(page.getByRole('checkbox', { name: /0000002/ })).toBeVisible()
+  await expect(page.getByRole('navigation', { name: 'Páginas de localidades' })).toContainText('Página 1 · 1 localidades')
+  await page.getByRole('checkbox', { name: /0000002/ }).check()
+  await expect(page.getByRole('list', { name: 'Localidades selecionadas' }).getByRole('listitem')).toHaveCount(2)
+  await search.fill('')
+  await expect(page.getByRole('checkbox', { name: /0000001/ })).toBeChecked()
+})
+
+test('layout compacto destaca metadados e se adapta ao celular', async ({ page }) => {
+  await page.setViewportSize({ width: 1365, height: 900 })
+  await choose(page)
+  await expect(page.locator('.app-header h1')).toHaveText('Pesquisas IBGE Agregados')
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/favicon.svg')
+  await expect(page.locator('.metadata-facts')).toContainText('Pesquisa')
+  const variables = await page.getByRole('group', { name: /Variáveis da consulta/ }).boundingBox()
+  const periods = await page.getByRole('group', { name: /Períodos da consulta/ }).boundingBox()
+  expect(periods!.x).toBeGreaterThan(variables!.x + variables!.width)
+  await page.screenshot({ path: 'test-results/editor-desktop.png', fullPage: true })
+  await page.setViewportSize({ width: 390, height: 844 })
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390)
+  await page.screenshot({ path: 'test-results/editor-mobile.png', fullPage: true })
+})
+
 test('localidades: paginação preserva seleção e resposta obsoleta não altera nível', async ({ page }) => {
   let release!: () => void
   const gate = new Promise<void>(resolve => { release = resolve })

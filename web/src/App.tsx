@@ -28,8 +28,8 @@ function Provenance({ sources }: { sources: Source[] }) {
 
 function MetadataView({ data, sources, onResult, onDraftChange, initialDraft }: { data: Metadata; sources: Source[] } & ExecutionProps) {
   const [level, setLevel] = useState(initialDraft?.nivel_id ?? (data.niveis.some(item => item.id === 'N6') ? 'N6' : ''))
-  return <section className="metadata" aria-labelledby="metadata-title"><h2 id="metadata-title">{data.id} · {data.nome}</h2>
-    <p>{data.pesquisa} · {data.assunto}</p><p>{data.periodicidade.frequencia} · {data.periodicidade.inicio} a {data.periodicidade.fim}</p><p>Referência SIDRA: {data.sidra_url}</p>
+  return <section className="metadata" aria-labelledby="metadata-title"><header className="metadata-header"><span className="eyebrow">Metadados da pesquisa · Agregado {data.id}</span><h2 id="metadata-title">{data.id} · {data.nome}</h2>
+    <dl className="metadata-facts"><div><dt>Pesquisa</dt><dd>{data.pesquisa}</dd></div><div><dt>Assunto</dt><dd>{data.assunto}</dd></div><div><dt>Periodicidade</dt><dd>{data.periodicidade.frequencia} · {data.periodicidade.inicio} a {data.periodicidade.fim}</dd></div><div><dt>Referência SIDRA</dt><dd><a href={data.sidra_url} target="_blank" rel="noreferrer">Tabela {data.id} ↗</a></dd></div></dl></header>
     <Editor key={JSON.stringify(data)} metadata={data} level={data.niveis.some(item => item.id === level) ? level : ''} setLevel={setLevel} onResult={onResult} onDraftChange={onDraftChange} initialDraft={initialDraft} />
     {data.niveis.length === 0 && <p role="status">Nenhum nível territorial publicado.</p>}
     <details open><summary>Todos os grupos territoriais</summary>{Array.from(new Set(data.niveis.map(item => item.grupo))).map(group => <div key={group}><h3>{group}</h3>{!['Administrativo', 'Especial', 'IBGE'].includes(group) && <p>Grupo adicional publicado pela fonte.</p>}<ul>{data.niveis.filter(item => item.grupo === group).map((item, index) => <li key={`${item.id}-${index}`}>{item.id} · {item.nome ?? 'Nome não publicado no acervo'}</li>)}</ul></div>)}</details>
@@ -90,11 +90,11 @@ export default function App() {
   const [result, setResult] = useState<Envelope<Result> | null>(null)
   const [currentDraftKey, setCurrentDraftKey] = useState<string | null>(null)
   const domains = useQuery({ queryKey: ['dominios'], queryFn: ({ signal }) => getDomains(signal), staleTime: 60_000 })
-  return <main><h1 className="page-title">Pesquisas IBGE <span>Agregados</span></h1>
+  return <><header className="app-header"><div className="app-brand"><img src="/favicon.svg" width="32" height="32" alt="" /><h1 className="page-title">Pesquisas IBGE <span>Agregados</span></h1></div></header><main>
     {restoration.error && <p role="alert">{restoration.error}</p>}
     {restoration.draft && <><button onClick={() => { setRestoration({ draft: null, error: '' }); setCurrentDraftKey(null); history.replaceState(null, '', location.pathname + location.search) }}>Voltar à descoberta</button><Restored key={JSON.stringify(restoration.draft)} draft={restoration.draft} onResult={value => { setResult(value); setCurrentDraftKey(draftKey(value.data.consulta_aplicada)) }} onDraftChange={draft => setCurrentDraftKey(draft ? draftKey(draft) : null)} /></>}
     <Feedback loading={domains.isFetching} error={domains.error} retry={() => void domains.refetch()} />{!restoration.draft && domains.isSuccess && <Discovery domains={domains.data} onResult={value => { setResult(value); setCurrentDraftKey(draftKey(value.data.consulta_aplicada)) }} onDraftChange={draft => setCurrentDraftKey(draft ? draftKey(draft) : null)} />}
     {result && <Results key={JSON.stringify(result.sources)} response={result} pending={currentDraftKey !== draftKey(result.data.consulta_aplicada)} />}
     <details className="query-import"><summary>Restaurar consulta salva</summary><p>Importe um JSON exportado por esta aplicação para recuperar os filtros de uma consulta.</p><QueryImport restore={draft => { setRestoration({ draft, error: '' }); setCurrentDraftKey(draftKey(draft)) }} /></details>
-    <footer>Fonte: Instituto Brasileiro de Geografia e Estatística.</footer></main>
+    <footer>Fonte: Instituto Brasileiro de Geografia e Estatística.</footer></main></>
 }
