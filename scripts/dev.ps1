@@ -1,6 +1,6 @@
 param(
-    [ValidateRange(1,65535)][int]$BackendPort = 8817,
-    [ValidateRange(1,65535)][int]$WebPort = 5187,
+    [ValidateRange(1,65535)][int]$BackendPort = 43871,
+    [ValidateRange(1,65535)][int]$WebPort = 43873,
     [switch]$OpenBrowser
 )
 $ErrorActionPreference = 'Stop'
