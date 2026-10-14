@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import type { Item, Metadata } from './api/catalogo'
-import { getLocations, getPeriods, validateDraft, type Draft } from './api/consultas'
+import type { Envelope, Item, Metadata } from './api/catalogo'
+import { executeDraft, getLocations, getPeriods, validateDraft, type Draft, type Result } from './api/consultas'
+
+export type ExecutionProps = { onResult: (value: Envelope<Result>) => void; onDraftChange: (draft?: Draft) => void }
 
 function Multi({ label, items, values, change }: { label: string; items: Item[]; values: string[]; change: (values: string[]) => void }) {
   const [search, setSearch] = useState('')
@@ -17,23 +19,44 @@ function QueryFeedback({ query }: { query: { isFetching: boolean; error: Error |
   return query.isFetching ? <p role="status">Carregando dimensões…</p> : null
 }
 
-export default function Editor({ metadata, level, setLevel }: { metadata: Metadata; level: string; setLevel: (value: string) => void }) {
+export default function Editor({ metadata, level, setLevel, onResult, onDraftChange }: { metadata: Metadata; level: string; setLevel: (value: string) => void } & ExecutionProps) {
   const [draft, setDraft] = useState<Draft>({ agregado_id: metadata.id, nivel_id: level, variavel_ids: [], localidade_ids: [], periodo_ids: [], classificacoes: metadata.classificacoes.map(v => ({ classificacao_id: v.id, categoria_ids: [] })) })
   const [locationSearch, setLocationSearch] = useState('')
   const [page, setPage] = useState(1)
   const [selectedLocations, setSelectedLocations] = useState<Item[]>([])
   const [submitted, setSubmitted] = useState<Draft | null>(null)
   const [copied, setCopied] = useState('')
+  const active = useRef<AbortController | null>(null)
+  const [executing, setExecuting] = useState(false)
+  const [executionError, setExecutionError] = useState('')
+  useEffect(() => () => { active.current?.abort() }, [])
+  async function search() {
+    active.current?.abort()
+    const controller = new AbortController()
+    active.current = controller
+    setExecuting(true); setExecutionError('')
+    try {
+      const response = await executeDraft(structuredClone(draft), controller.signal)
+      if (!controller.signal.aborted && active.current === controller) onResult(response)
+    } catch (error) {
+      if (!controller.signal.aborted && active.current === controller) setExecutionError(error instanceof Error ? error.message : 'Falha ao buscar resultados.')
+    } finally {
+      if (active.current === controller) setExecuting(false)
+    }
+  }
   const periods = useQuery({ queryKey: ['periodos', metadata.id], queryFn: ({ signal }) => getPeriods(metadata.id, signal), staleTime: 60_000 })
   const locations = useQuery({ queryKey: ['localidades', metadata.id, level, locationSearch, page], queryFn: ({ signal }) => getLocations(metadata.id, { nivel: level, q: locationSearch, page: String(page) }, signal), enabled: !!level, staleTime: 60_000 })
   const validation = useQuery({ queryKey: ['validar', submitted], queryFn: ({ signal }) => validateDraft(submitted!, signal), enabled: !!submitted, retry: false, staleTime: Infinity, gcTime: 0, refetchOnWindowFocus: false })
   function update(next: Draft) {
+    active.current?.abort(); active.current = null
+    setExecuting(false); setExecutionError('')
     setSubmitted(null); setCopied('')
     next.classificacoes = next.classificacoes.map(chosen => {
       const classification = metadata.classificacoes.find(v => v.id === chosen.classificacao_id)!
       const totalAllowed = classification.sumarizacao.status && !next.variavel_ids.some(id => classification.sumarizacao.excecao.includes(id))
       return { ...chosen, categoria_ids: chosen.categoria_ids.filter(id => id !== '0' || totalAllowed) }
     })
+    onDraftChange(next)
     setDraft(next)
   }
   const ready = !!level && draft.variavel_ids.length > 0 && draft.localidade_ids.length > 0 && draft.periodo_ids.length > 0 && draft.classificacoes.every(v => v.categoria_ids.length > 0) && periods.isSuccess && locations.isSuccess
@@ -52,6 +75,9 @@ export default function Editor({ metadata, level, setLevel }: { metadata: Metada
       if (allowed) items.unshift({ id: '0', nome: 'Total especial da API', unidade: null, nivel: null })
       return <div key={c.id}><Multi label={`Classificação ${c.id} · ${c.nome}`} items={items} values={draft.classificacoes.find(v => v.classificacao_id === c.id)!.categoria_ids} change={ids => update({ ...draft, classificacoes: draft.classificacoes.map(v => v.classificacao_id === c.id ? { ...v, categoria_ids: ids } : v) })} />{!allowed && <p>Total especial indisponível para as variáveis selecionadas ou para esta classificação.</p>}</div>
     })}
+    <button disabled={!ready || executing} onClick={() => void search()}>Buscar</button>
+    {executing && <p role="status">Buscando resultado…</p>}
+    {executionError && <p role="alert">{executionError} Ajuste o recorte ou use Buscar para tentar novamente.</p>}
     <button disabled={!ready || validation.isFetching} onClick={() => { setSubmitted(structuredClone(draft)); if (submitted) void validation.refetch() }}>Validar seleção e gerar URL</button>
     {submitted && <QueryFeedback query={validation} />}
     {submitted && validation.isSuccess && <div aria-label="Consulta validada"><p>Consulta validada · {validation.data.data.estimated_observations} observações estimadas</p><label>URL oficial<textarea aria-label="URL oficial" readOnly value={validation.data.data.source_url} /></label><button onClick={() => { void navigator.clipboard.writeText(validation.data.data.source_url).then(() => setCopied('URL copiada.')).catch(() => setCopied('Selecione e copie a URL no campo acima.')) }}>Copiar URL oficial</button><p role="status">{copied}</p></div>}

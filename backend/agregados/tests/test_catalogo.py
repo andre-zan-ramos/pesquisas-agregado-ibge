@@ -126,7 +126,7 @@ class CatalogApiTests(SimpleTestCase):
                 self.assertEqual(response.status_code, 502)
                 self.assertEqual(response.json()["error"]["code"], "upstream_inconsistent_data")
 
-    def test_no_query_editor_routes(self):
+    def test_execution_rejects_get_without_upstream(self):
         for path in ("consultas/executar/",):
-            self.assertEqual(self.get(path).status_code, 404)
+            self.assertEqual(self.get(path).status_code, 405)
         self.assertEqual(self.requests, [])

@@ -64,6 +64,22 @@
       "type": "object", "additionalProperties": false, "required": ["code", "message"],
       "properties": {"code": {"type": "string"}, "message": {"type": "string"}, "details": {}}
     },
+    "analise": {
+      "type": "object", "additionalProperties": false,
+      "required": ["variavel_id", "variavel_nome", "nivel_id", "localidade_id", "localidade_nome", "classificacoes", "unidade", "suspensa", "n", "sem_numero", "media", "desvio", "cv", "minimo", "maximo", "periodos_min", "periodos_max", "grafico_linhas", "pontos", "avisos"],
+      "properties": {
+        "variavel_id": {"$ref": "#/$defs/id"}, "variavel_nome": {"type": "string"},
+        "nivel_id": {"$ref": "#/$defs/nivelId"}, "localidade_id": {"$ref": "#/$defs/id"}, "localidade_nome": {"type": "string"},
+        "classificacoes": {"type": "array", "items": {"$ref": "#/$defs/categoriaObservacao"}},
+        "unidade": {"type": ["string", "null"]}, "suspensa": {"type": "boolean"},
+        "n": {"type": "integer", "minimum": 0}, "sem_numero": {"type": "integer", "minimum": 0},
+        "media": {"type": ["number", "null"]}, "desvio": {"type": ["number", "null"]}, "cv": {"type": ["number", "null"]},
+        "minimo": {"type": ["number", "null"]}, "maximo": {"type": ["number", "null"]},
+        "periodos_min": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "periodos_max": {"type": "array", "items": {"$ref": "#/$defs/id"}},
+        "grafico_linhas": {"type": "boolean"}, "avisos": {"type": "array", "items": {"type": "string"}},
+        "pontos": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["periodo_id", "valor", "lacuna"], "properties": {"periodo_id": {"$ref": "#/$defs/id"}, "valor": {"type": ["number", "null"]}, "lacuna": {"type": "boolean"}}}}
+      }
+    },
     "dadosResultado": {
       "type": "object", "additionalProperties": false,
       "required": ["consulta_aplicada", "observacoes", "metadados", "warnings", "truncated", "normalizer_version"],
@@ -72,7 +88,11 @@
         "observacoes": {"type": "array", "items": {"$ref": "#/$defs/observacao"}},
         "metadados": {"$ref": "#/$defs/metadados"},
         "warnings": {"type": "array", "items": {"$ref": "#/$defs/warning"}},
-        "truncated": {"const": false}, "normalizer_version": {"const": "v1"}
+        "truncated": {"const": false}, "normalizer_version": {"const": "v1"},
+        "corpo_original": {"type": "array"},
+        "periodos_apresentacao": {"type": "array", "items": {"$ref": "#/$defs/id"}},
+        "ordem_cronologica": {"type": "boolean"},
+        "analises": {"type": "array", "items": {"$ref": "#/$defs/analise"}}
       }
     },
     "resultado": {

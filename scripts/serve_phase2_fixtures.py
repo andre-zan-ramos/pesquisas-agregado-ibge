@@ -24,7 +24,23 @@ def load(name):
 
 def handle(request):
     path = request.url.path
-    if path.endswith("/metadados"):
+    if "/variaveis/" in path:
+        periods = path.split('/periodos/')[1].split('/')[0].split('|')
+        variables = path.rsplit('/', 1)[-1].split('|')
+        selection = request.url.params['localidades'].split('[', 1)[1].rstrip(']').split(',')
+        categories = dict(part.rstrip(']').split('[', 1) for part in request.url.params['classificacao'].split('|'))
+        body = []
+        for variable in load('series.json'):
+            if variable['id'] not in variables:
+                continue
+            results = []
+            for result in variable['resultados']:
+                if not all(next(iter(c['categoria'])) in categories[c['id']].split(',') for c in result['classificacoes']):
+                    continue
+                result['series'] = [{**s, 'serie': {p: v for p, v in s['serie'].items() if p in periods}} for s in result['series'] if s['localidade']['id'] in selection]
+                results.append(result)
+            body.append({**variable, 'resultados': results})
+    elif path.endswith("/metadados"):
         body = load("metadados.json")
     elif "/localidades/" in path:
         level = path.rsplit("/", 1)[-1]

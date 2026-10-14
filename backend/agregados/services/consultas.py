@@ -1,4 +1,4 @@
-"""Dimensões e validação; nunca executa séries."""
+"""Dimensões, validação e execução explícita de consultas."""
 import re
 import unicodedata
 from math import prod
@@ -77,6 +77,7 @@ class QueryService(CatalogService):
         if len(data['variavel_ids']) > limits['max_variables'] or len(data['localidade_ids']) > limits['max_localities']:
             raise ServiceError('query_too_large', 'Reduza as variáveis ou localidades selecionadas.', 422)
         metadata = self.metadata(data['agregado_id'])
+        self.validated_metadata = metadata
         for field, published in (('variavel_ids', metadata['variaveis']), ('periodo_ids', metadata['periodos'])):
             if not set(data[field]) <= {v['id'] for v in published}:
                 selection_error(field)
@@ -108,3 +109,11 @@ class QueryService(CatalogService):
                 raise ServiceError('query_too_large', 'Reduza o recorte: expressão de URL excedida.', 422) from error
             raise
         return {'consulta_resolvida': data, 'source_url': url, 'estimated_observations': estimate, 'limites': limits, 'warnings': []}
+
+    def execute(self, data):
+        from urllib.parse import urlsplit, parse_qsl
+        from .normalizacao import normalize
+        validated = self.validate(data)
+        url = urlsplit(validated['source_url'])
+        raw = self.fetch(url.path, dict(parse_qsl(url.query)))
+        return normalize(raw, validated['consulta_resolvida'], self.validated_metadata)

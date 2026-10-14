@@ -34,3 +34,7 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 li { margin: 8px 0; } .metadata h2 { overflow-wrap: anywhere; }
 @media (max-width: 600px) { main { padding: 26px 22px; }.intro { margin-top: 64px; }.welcome { padding: 22px; gap: 16px; }.tag { font-size: 13px; } }
 .choices { display: grid; gap: .5rem; max-height: 18rem; overflow-y: auto; } .choices label { display: flex; align-items: center; gap: .5rem; } .choices input { width: auto; } textarea { width: 100%; min-height: 7rem; overflow-wrap: anywhere; } fieldset { min-width: 0; }
+
+.table-scroll { overflow-x: auto; } table { border-collapse: collapse; width: 100%; min-width: 1600px; font-size: 14px; } th, td { padding: 10px; text-align: left; border-bottom: 1px solid #d8e2dd; vertical-align: top; } .literal { white-space: pre-wrap; } pre { white-space: pre-wrap; overflow-wrap: anywhere; } figure { margin: 20px 0; } svg { width: 100%; height: auto; } svg text { font-size: 12px; fill: currentColor; } figcaption { overflow-wrap: anywhere; font-size: 13px; } .statistics { display: grid; grid-template-columns: auto 1fr; gap: 10px; } section[aria-label="Resultado aplicado"] { margin-top: 40px; min-width: 0; }
+
+.table-scroll:focus-visible { outline: 3px solid #348673; outline-offset: 2px; } @media (max-width: 600px) { svg text { font-size: 24px; } }

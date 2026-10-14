@@ -1,8 +1,15 @@
 import { getApi } from './client'
 import type { Envelope, Metadata, Researches } from './catalogo'
 export type Draft = { agregado_id: string; nivel_id: string; variavel_ids: string[]; localidade_ids: string[]; periodo_ids: string[]; classificacoes: { classificacao_id: string; categoria_ids: string[] }[] }
+export const draftKey = (draft: Draft) => JSON.stringify({ ...draft, variavel_ids: [...draft.variavel_ids].sort(), localidade_ids: [...draft.localidade_ids].sort(), periodo_ids: [...draft.periodo_ids].sort(), classificacoes: draft.classificacoes.map(c => ({ ...c, categoria_ids: [...c.categoria_ids].sort() })).sort((a, b) => a.classificacao_id.localeCompare(b.classificacao_id)) })
 export type Validated = { consulta_resolvida: Draft; source_url: string; estimated_observations: number; limites: Record<string, number>; warnings: unknown[] }
 export type Locality = { id: string; nome: string; nivel_id: string; uf_sigla: null }
 export const getPeriods = (id: string, signal: AbortSignal) => getApi<Envelope<{ items: Metadata['periodos'] }>>(`/agregados/${id}/periodos/`, signal)
 export const getLocations = (id: string, params: Record<string, string>, signal: AbortSignal) => getApi<Envelope<{ items: Locality[]; pagination: Researches['pagination'] }>>(`/agregados/${id}/localidades/`, signal, params)
 export const validateDraft = (draft: Draft, signal: AbortSignal) => getApi<Envelope<Validated>>('/consultas/validar/', signal, undefined, draft)
+
+export type Category = { classificacao_id: string; classificacao_nome: string; categoria_id: string; categoria_nome: string; categoria_unidade: string | null }
+export type Observation = { agregado_id: string; variavel_id: string; variavel_nome: string; nivel_id: string; localidade_id: string; localidade_nome: string; periodo_id: string; classificacoes: Category[]; unidade: string | null; unidade_original: string | null; unidade_status: string; valor_original: string | number | null; valor_numerico: number | null; valor_status: string; origem_indice: { variavel: number; resultado: number; serie: number } }
+export type Analysis = Pick<Observation, 'variavel_id' | 'variavel_nome' | 'nivel_id' | 'localidade_id' | 'localidade_nome' | 'classificacoes' | 'unidade'> & { suspensa: boolean; n: number; sem_numero: number; media: number | null; desvio: number | null; cv: number | null; minimo: number | null; maximo: number | null; periodos_min: string[]; periodos_max: string[]; grafico_linhas: boolean; pontos: { periodo_id: string; valor: number | null; lacuna: boolean }[]; avisos: string[] }
+export type Result = { consulta_aplicada: Draft; observacoes: Observation[]; metadados: Metadata; warnings: { code: string; message: string; details?: unknown }[]; normalizer_version: string; analises: Analysis[]; periodos_apresentacao: string[]; ordem_cronologica: boolean; truncated: false }
+export const executeDraft = (draft: Draft, signal: AbortSignal) => getApi<Envelope<Result>>('/consultas/executar/', signal, undefined, draft)

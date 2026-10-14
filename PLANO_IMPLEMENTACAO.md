@@ -1,6 +1,6 @@
 # Explorador de agregados do IBGE — análise e implementação por fases
 
-Data: 13/10/2026. Situação: fases 0–3 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fases 4–6 pendentes. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md), [docs/FASE_2.md](docs/FASE_2.md) e [docs/FASE_3.md](docs/FASE_3.md).
+Atualização: 14/10/2026. Situação: fases 0–4 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fases 5–6 pendentes. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md), [docs/FASE_2.md](docs/FASE_2.md), [docs/FASE_3.md](docs/FASE_3.md) e [docs/FASE_4.md](docs/FASE_4.md).
 
 ## 1. Objetivo e escopo
 
@@ -201,6 +201,8 @@ Entregas: variáveis, localidades, períodos, classificações/categorias; valid
 Aceite: todos os parâmetros relevantes aparecem na URL gerada; seleção inválida ou excessiva é rejeitada; total é escolhido explicitamente quando existente; mudar campos dependentes limpa seleções inválidas; gerar URL não executa séries.
 
 ### Fase 4 — execução, tabela, gráficos e estatísticas
+
+Situação: concluída exclusivamente no escopo autorizado em 14/10/2026. Endpoint `consultas/executar/`, normalização de todos os grupos/ocorrências, tabela longa paginada, SVG por combinação e estatísticas descritivas entregues. Somente Buscar executa séries; rascunho, consulta aplicada e último resultado permanecem separados, com proteção de respostas obsoletas. Conflitos/unidades não confirmadas suspendem análise; cronologia desconhecida suspende linhas. Validação offline: 64 testes backend, 24 testes Chromium, typecheck e build; hashes preservados, sem novas consultas ao IBGE. Entregas, critérios, comandos, regras aditivas do schema e pendências em [docs/FASE_4.md](docs/FASE_4.md). A entrega inicial não incluiu commit; versionamento e sincronização Git autorizados separadamente após a entrega. Sem publicação da aplicação; fases 5–6 não antecipadas.
 
 Entregas: endpoint de execução, normalizador de todos os grupos, tabela longa, apresentação por variável, gráficos e resumo. Fonte, unidade, recorte e marcadores visíveis. Esta é a fase que conclui o MVP funcional.
 

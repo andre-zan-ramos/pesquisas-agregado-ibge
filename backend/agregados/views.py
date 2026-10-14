@@ -52,3 +52,10 @@ def validar(request):
     query_params(request)
     service = QueryService()
     return Response(service.envelope(service.validate(request.data)))
+
+
+@api_view(["POST"])
+def executar(request):
+    query_params(request)
+    service = QueryService()
+    return Response(service.envelope(service.execute(request.data)))
