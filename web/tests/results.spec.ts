@@ -1,10 +1,11 @@
+import { selectCatalogOption } from './catalog-picker'
 import { test, expect, type Page } from '@playwright/test'
 import fs from 'node:fs'
 
 async function prepare(page: Page) {
   await page.goto('/')
-  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).selectOption('SINTETICA')
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('900001')
+  await selectCatalogOption(page, 'Pesquisa', 'SINTETICA')
+  await selectCatalogOption(page, 'Agregado', '900001')
   for (const pattern of [/000101/, /102 ·/, /0000001/, /0000002/, /202401/, /202403/, /01 · Grupo A/, /02 · Grupo B/, /00 · Condição A/]) await page.getByRole('checkbox', { name: pattern }).check()
 }
 test.beforeEach(async ({ page }) => {
@@ -44,7 +45,7 @@ test('Buscar explícito integrado: grupos, homônimos, literais, edição e cach
   await expect(result.getByText(/Alterações pendentes/)).toHaveCount(0)
   await result.getByText('Consulta aplicada e proveniência').click()
   await expect(result.getByText(/expira em .*cache/).first()).toBeVisible()
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('')
+  await selectCatalogOption(page, 'Agregado', '')
   await expect(result).toBeVisible()
   await expect(result.getByText(/Alterações pendentes/)).toBeVisible()
 })
@@ -162,7 +163,7 @@ test('troca de agregado durante execução descarta resposta obsoleta', async ({
     await route.fulfill({ json: body }).catch(() => {})
   })
   await page.getByRole('button', { name: 'Buscar', exact: true }).click(); await pending
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('')
+  await selectCatalogOption(page, 'Agregado', '')
   release()
   await expect(page.getByRole('region', { name: 'Editor de consulta' })).toHaveCount(0)
   await expect(page.getByRole('heading', { name: 'Resultado · 900001' })).toBeVisible()

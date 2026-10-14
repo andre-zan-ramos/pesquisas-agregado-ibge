@@ -1,3 +1,4 @@
+import { selectCatalogOption } from './catalog-picker'
 import { test, expect } from '@playwright/test'
 import { readFileSync } from 'node:fs'
 
@@ -16,14 +17,14 @@ test.beforeEach(async ({ page }) => {
 })
 
 async function choose(page: import('@playwright/test').Page) {
-  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).selectOption('SINTETICA')
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('900001')
+  await selectCatalogOption(page, 'Pesquisa', 'SINTETICA')
+  await selectCatalogOption(page, 'Agregado', '900001')
   await expect(page.getByRole('heading', { name: /900001/ })).toBeVisible()
 }
 
 test('Django com transporte mock: domínios, seleção e metadados completos', async ({ page }) => {
   await page.goto('/')
-  await expect(page.getByRole('combobox', { name: 'Nível de descoberta', exact: true })).toHaveValue('N6')
+  await expect(page.getByRole('combobox', { name: 'Nível territorial', exact: true })).toContainText('N6')
   await choose(page)
   await expect(page.getByRole('combobox', { name: 'Nível publicado do agregado', exact: true })).toHaveValue('N6')
   await expect(page.getByRole('heading', { name: 'IBGE', exact: true })).toBeVisible()
@@ -40,16 +41,16 @@ test('Django com transporte mock: domínios, seleção e metadados completos', a
 test('busca por código/nome e filtros limpam seleções', async ({ page }) => {
   await page.goto('/')
   await choose(page)
-  await page.getByRole('textbox', { name: 'Buscar assunto por código ou nome', exact: true }).fill('001')
-  await page.getByRole('combobox', { name: 'Assunto', exact: true }).selectOption('001')
-  await expect(page.getByRole('combobox', { name: 'Pesquisa', exact: true })).toHaveValue('')
+  await page.getByRole('combobox', { name: 'Assunto', exact: true }).click()
+  await page.getByRole('searchbox').fill('001')
+  await page.getByRole('listbox').getByRole('option', { name: /^001 ·/ }).click()
+  await expect(page.getByRole('combobox', { name: 'Pesquisa', exact: true })).toHaveText('Selecione…')
   await expect(page.getByRole('heading', { name: /900001/ })).toHaveCount(0)
-  await page.getByRole('textbox', { name: 'Buscar pesquisas e agregados por código ou nome', exact: true }).fill('900001')
   await choose(page)
-  await page.getByRole('combobox', { name: 'Período de descoberta', exact: true }).selectOption('202403')
-  await expect(page.getByRole('combobox', { name: 'Agregado', exact: true })).toHaveValue('')
-  await page.getByRole('combobox', { name: 'Nível de descoberta', exact: true }).selectOption('N123')
-  await expect(page.getByRole('combobox', { name: 'Pesquisa', exact: true })).toHaveValue('')
+  await selectCatalogOption(page, 'Ano da pesquisa', '2024')
+  await expect(page.getByRole('combobox', { name: 'Agregado', exact: true })).toHaveText('Selecione…')
+  await selectCatalogOption(page, 'Nível territorial', 'N123')
+  await expect(page.getByRole('combobox', { name: 'Pesquisa', exact: true })).toHaveText('Selecione…')
 })
 
 test('carregamento, vazio, erro e recuperação são distintos', async ({ page }) => {
@@ -66,7 +67,7 @@ test('carregamento, vazio, erro e recuperação são distintos', async ({ page }
   release()
   await expect(page.getByText('Nenhuma pesquisa encontrada para os filtros.')).toBeVisible()
   mode = 'error'
-  await page.getByRole('combobox', { name: 'Assunto', exact: true }).selectOption('001')
+  await selectCatalogOption(page, 'Assunto', '001')
   await expect(page.getByRole('alert')).toContainText('Tempo excedido no mock.')
   await expect(page.getByText('Nenhuma pesquisa encontrada para os filtros.')).toHaveCount(0)
   mode = 'success'
@@ -87,12 +88,14 @@ test('catálogo obsoleto não substitui filtro atual', async ({ page }) => {
   })
   await page.goto('/')
   await choose(page)
-  await page.getByRole('combobox', { name: 'Assunto', exact: true }).selectOption('001')
+  await selectCatalogOption(page, 'Assunto', '001')
   await pending
-  await page.getByRole('combobox', { name: 'Assunto', exact: true }).selectOption('')
+  await selectCatalogOption(page, 'Assunto', '')
   release()
   await choose(page)
-  await expect(page.getByRole('option', { name: /111111/ })).toHaveCount(0)
+  await page.getByRole('combobox', { name: 'Agregado', exact: true }).click()
+  await expect(page.getByRole('listbox').getByRole('option', { name: /111111/ })).toHaveCount(0)
+  await page.keyboard.press('Escape')
 })
 
 test('metadados obsoletos não substituem outro agregado', async ({ page }) => {
@@ -106,10 +109,10 @@ test('metadados obsoletos não substituem outro agregado', async ({ page }) => {
     else await route.fulfill(fulfill(envelope({ ...metadata, id: '900002', nome: 'Segundo', niveis: [{ id: 'N123', nome: null, grupo: 'Novo' }] })))
   })
   await page.goto('/')
-  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).selectOption('SINTETICA')
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('900001')
+  await selectCatalogOption(page, 'Pesquisa', 'SINTETICA')
+  await selectCatalogOption(page, 'Agregado', '900001')
   await pending
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('900002')
+  await selectCatalogOption(page, 'Agregado', '900002')
   await expect(page.getByRole('heading', { name: '900002 · Segundo' })).toBeVisible()
   release()
   await expect(page.getByRole('combobox', { name: 'Nível publicado do agregado', exact: true })).toHaveValue('')
@@ -124,15 +127,15 @@ test('falha de domínios recuperável e N6 ausente pede escolha', async ({ page 
   await expect(page.getByRole('alert')).toContainText('Domínios indisponíveis.')
   fail = false
   await page.getByRole('button', { name: 'Tentar novamente' }).click()
-  await expect(page.getByRole('combobox', { name: 'Nível de descoberta', exact: true })).toHaveValue('')
+  await expect(page.getByRole('combobox', { name: 'Nível territorial', exact: true })).toHaveText('Selecione…')
 })
 
 test('falha de metadados recuperável', async ({ page }) => {
   let fail = true
   await page.route(`**${prefix}/agregados/900001/metadados/`, route => route.fulfill(fail ? { status: 502, json: { error: { message: 'Metadados indisponíveis.' } } } : fulfill(envelope(metadata))))
   await page.goto('/')
-  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).selectOption('SINTETICA')
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('900001')
+  await selectCatalogOption(page, 'Pesquisa', 'SINTETICA')
+  await selectCatalogOption(page, 'Agregado', '900001')
   await expect(page.getByRole('alert')).toContainText('Metadados indisponíveis.')
   fail = false
   await page.getByRole('button', { name: 'Tentar novamente' }).click()
@@ -157,23 +160,64 @@ test('paginação e troca de pesquisa limpam agregado', async ({ page }) => {
   })
   await page.goto('/')
   await choose(page)
-  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).selectOption('VAZIA')
-  await expect(page.getByRole('combobox', { name: 'Agregado', exact: true })).toHaveValue('')
+  await selectCatalogOption(page, 'Pesquisa', 'VAZIA')
+  await expect(page.getByRole('combobox', { name: 'Agregado', exact: true })).toHaveText('Selecione…')
   await expect(page.getByText('Nenhum agregado publicado nesta pesquisa.')).toBeVisible()
   await page.getByRole('button', { name: 'Próxima', exact: true }).click()
-  await expect(page.getByRole('option', { name: 'SEGUNDA · Outra página', exact: true })).toHaveCount(1)
-  await expect(page.getByRole('combobox', { name: 'Pesquisa', exact: true })).toHaveValue('')
+  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).click()
+  await expect(page.getByRole('listbox').getByRole('option', { name: 'SEGUNDA · Outra página', exact: true })).toHaveCount(1)
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('combobox', { name: 'Pesquisa', exact: true })).toHaveText('Selecione…')
   await expect(page.getByRole('button', { name: 'Próxima', exact: true })).toBeDisabled()
 })
 
 test('busca local não altera IDs e aceita nome do agregado', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('textbox', { name: 'Buscar pesquisa por código ou nome', exact: true }).fill('sintética')
-  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).selectOption('SINTETICA')
-  await page.getByRole('textbox', { name: 'Buscar agregado por código ou nome', exact: true }).fill('classificações')
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('900001')
+  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).click()
+  await page.getByRole('searchbox').fill('sintética')
+  await page.getByRole('listbox').getByRole('option', { name: /^SINTETICA ·/ }).click()
+  await page.getByRole('combobox', { name: 'Agregado', exact: true }).click()
+  await page.getByRole('searchbox').fill('classificações')
+  await page.getByRole('listbox').getByRole('option', { name: /^900001 ·/ }).click()
   await expect(page.getByRole('heading', { name: /900001/ })).toBeVisible()
-  await page.getByRole('textbox', { name: 'Buscar pesquisas e agregados por código ou nome', exact: true }).fill('inexistente')
-  await expect(page.getByText('Nenhuma pesquisa encontrada para os filtros.')).toBeVisible()
-  await expect(page.getByRole('heading', { name: /900001/ })).toHaveCount(0)
+  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).click()
+  await page.getByRole('searchbox').fill('inexistente')
+  await expect(page.getByText('Nenhuma opção encontrada.')).toBeVisible()
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('heading', { name: /900001/ })).toBeVisible()
+})
+
+test('topo compacto e combobox com busca e teclado', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByLabel('Importar JSON de consulta')).toBeHidden()
+  expect(await page.getByRole('heading', { name: 'Filtros de pesquisa' }).evaluate(element => element.getBoundingClientRect().top)).toBeLessThan(150)
+  const trigger = page.getByRole('combobox', { name: 'Pesquisa', exact: true })
+  expect(await trigger.evaluate(element => element.getBoundingClientRect().height)).toBeLessThan(60)
+  await trigger.click()
+  await page.getByRole('searchbox').fill('sintetica')
+  await expect(page.getByRole('listbox').getByRole('option')).toHaveCount(1)
+  await page.getByRole('searchbox').press('ArrowDown')
+  await page.getByRole('searchbox').press('Enter')
+  await expect(trigger).toContainText('SINTETICA')
+  await trigger.click()
+  await page.getByRole('searchbox').fill('inexistente')
+  await expect(page.getByText('Nenhuma opção encontrada.')).toBeVisible()
+  await page.keyboard.press('Escape')
+  await expect(trigger).toBeFocused()
+  await expect(trigger).toContainText('SINTETICA')
+  await page.evaluate(() => window.scrollTo(0, 0))
+  await page.screenshot({ path: '../var/ui-discovery-desktop.png' })
+  await trigger.click()
+  await page.screenshot({ path: '../var/ui-discovery-combobox.png' })
+})
+
+test('anos em ordem decrescente e filtro anual literal', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('combobox', { name: 'Ano da pesquisa', exact: true }).click()
+  await expect(page.getByRole('listbox').getByRole('option')).toHaveText(['Selecione…', '2026', '2025', '2024', '2023'])
+  const request = page.waitForRequest(request => new URL(request.url()).searchParams.get('periodo') === '2024')
+  await page.getByRole('listbox').getByRole('option', { name: '2024', exact: true }).click()
+  await request
+  await expect(page.getByRole('region', { name: 'Filtros de pesquisa', exact: true })).toBeVisible()
+  await expect(page.getByRole('region', { name: 'Pesquisa e agregado', exact: true })).toBeVisible()
 })

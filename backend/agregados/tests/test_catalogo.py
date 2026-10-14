@@ -94,9 +94,9 @@ class CatalogApiTests(SimpleTestCase):
         self.assertEqual(self.get("pesquisas/", q="inexistente").json()["data"]["items"], [])
 
     def test_filters_are_published_and_forwarded(self):
-        response = self.get("pesquisas/", assunto="001", nivel="N6", periodo="202401")
+        response = self.get("pesquisas/", assunto="001", nivel="N6", periodo="2024")
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(dict(self.requests[-1].url.params), {"assunto": "001", "nivel": "N6", "periodo": "202401"})
+        self.assertEqual(dict(self.requests[-1].url.params), {"assunto": "001", "nivel": "N6", "periodo": "2024"})
         self.assertEqual(self.get("pesquisas/", assunto="1").status_code, 400)
         self.assertEqual(len([request for request in self.requests if not request.url.params.get("acervo")]), 1)
 

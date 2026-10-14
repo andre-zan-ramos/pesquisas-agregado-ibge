@@ -1,3 +1,4 @@
+import { Combobox } from './components/ui/combobox'
 import { useEffect, useState } from 'react'
 import { QueryImport } from './Sharing'
 import { readLink } from './query-transfer'
@@ -10,15 +11,10 @@ import { draftKey, type Result } from './api/consultas'
 import { useQuery } from '@tanstack/react-query'
 import { getDomains, getMetadata, getResearches, type Item, type Metadata, type Source } from './api/catalogo'
 
-function Picker({ label, items, value, onChange, disabled = false }: { label: string; items: Item[]; value: string; onChange: (value: string) => void; disabled?: boolean }) {
-  const [search, setSearch] = useState('')
-  const filtered = items.filter(item => `${item.id} ${item.nome}`.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
-  const options = items.filter(item => item.id === value || filtered.includes(item))
-  return <fieldset disabled={disabled} className="picker"><legend>{label}</legend>
-    <input aria-label={`Buscar ${label.toLocaleLowerCase()} por código ou nome`} placeholder="Código ou nome" value={search} onChange={event => setSearch(event.target.value)} />
-    <select aria-label={label} value={value} onChange={event => onChange(event.target.value)}><option value="">Selecione…</option>{options.map(item => <option key={item.id} value={item.id}>{item.id} · {item.nome}</option>)}</select>
-    {search && filtered.length === 0 && <span role="status">Nenhum item encontrado.</span>}
-  </fieldset>
+function Picker({ label, items, value, onChange, disabled = false, year = false }: { year?: boolean; label: string; items: Item[]; value: string; onChange: (value: string) => void; disabled?: boolean }) {
+  return <div className="picker"><span className="picker-label">{label}</span>
+    <Combobox aria-label={label} options={[{ value: '', label: 'Selecione…' }, ...items.map(item => ({ value: item.id, label: year ? item.id : `${item.id} · ${item.nome}` }))]} value={value} onChange={onChange} disabled={disabled} searchPlaceholder={year ? "Buscar ano" : "Código ou nome"} />
+  </div>
 }
 
 function Feedback({ loading, error, retry }: { loading: boolean; error: Error | null; retry: () => void }) {
@@ -45,18 +41,22 @@ function MetadataView({ data, sources, onResult, onDraftChange, initialDraft }: 
 }
 
 function Discovery({ domains, onResult, onDraftChange }: { domains: Awaited<ReturnType<typeof getDomains>> } & ExecutionProps) {
-  const [selection, setSelection] = useState({ assunto: '', nivel: domains.data.niveis.some(item => item.id === 'N6') ? 'N6' : '', periodo: '', q: '', page: 1, pesquisa: '', agregado: '' })
-  const changeFilter = (key: 'assunto' | 'nivel' | 'periodo' | 'q', value: string) => { onDraftChange(); setSelection(previous => ({ ...previous, [key]: value, page: 1, pesquisa: '', agregado: '' })) }
+  const [selection, setSelection] = useState({ assunto: '', nivel: domains.data.niveis.some(item => item.id === 'N6') ? 'N6' : '', periodo: '', page: 1, pesquisa: '', agregado: '' })
+  const changeFilter = (key: 'assunto' | 'nivel' | 'periodo', value: string) => { onDraftChange(); setSelection(previous => ({ ...previous, [key]: value, page: 1, pesquisa: '', agregado: '' })) }
   const params: Record<string, string> = { page: String(selection.page), page_size: '50' }
-  for (const key of ['assunto', 'nivel', 'periodo', 'q'] as const) if (selection[key]) params[key] = selection[key]
+  for (const key of ['assunto', 'nivel', 'periodo'] as const) if (selection[key]) params[key] = selection[key]
   const catalog = useQuery({ queryKey: ['pesquisas', params], queryFn: ({ signal }) => getResearches(params, signal), staleTime: 60_000 })
   const researches = catalog.data?.data.items ?? []
   const research = researches.find(item => item.id === selection.pesquisa)
   const aggregate = research?.agregados.find(item => item.id === selection.agregado)
   const metadata = useQuery({ queryKey: ['metadados', aggregate?.id], queryFn: ({ signal }) => getMetadata(aggregate!.id, signal), enabled: !!aggregate, staleTime: 60_000 })
-  return <><section aria-labelledby="discovery-title"><h2 id="discovery-title">Descubra uma pesquisa</h2>
-    <div className="grid">{([['assunto', 'Assunto', domains.data.assuntos], ['nivel', 'Nível de descoberta', domains.data.niveis], ['periodo', 'Período de descoberta', domains.data.periodos]] as const).map(([key, label, items]) => <Picker key={key} label={label} items={items} value={selection[key]} onChange={value => changeFilter(key, value)} />)}</div>
-    <label className="catalog-search">Buscar pesquisas e agregados por código ou nome<input value={selection.q} onChange={event => changeFilter('q', event.target.value)} placeholder="Código ou nome da pesquisa ou agregado" /></label>
+  const years = domains.data.periodos.filter(item => /^[0-9]{4}$/.test(item.id)).slice().sort((a, b) => Number(b.id) - Number(a.id))
+  return <><section className="discovery-panel" aria-labelledby="filters-title"><h2 id="filters-title">Filtros de pesquisa</h2>
+    <div className="grid discovery-filters"><Picker label="Assunto" items={domains.data.assuntos} value={selection.assunto} onChange={value => changeFilter('assunto', value)} />
+      <Picker label="Nível territorial" items={domains.data.niveis} value={selection.nivel} onChange={value => changeFilter('nivel', value)} />
+      <Picker label="Ano da pesquisa" year items={years} value={selection.periodo} onChange={value => changeFilter('periodo', value)} /></div>
+    <Provenance sources={domains.sources} />
+    </section><section className="discovery-panel" aria-labelledby="discovery-title"><h2 id="discovery-title">Pesquisa e agregado</h2>
     <Feedback loading={catalog.isFetching} error={catalog.error} retry={() => void catalog.refetch()} />
     {catalog.isSuccess && researches.length === 0 && <p role="status">Nenhuma pesquisa encontrada para os filtros.</p>}
     <div className="grid"><Picker label="Pesquisa" items={researches} value={research?.id ?? ''} disabled={!catalog.isSuccess || catalog.isFetching} onChange={value => { onDraftChange(); setSelection(previous => ({ ...previous, pesquisa: value, agregado: '' })) }} />
@@ -65,7 +65,6 @@ function Discovery({ domains, onResult, onDraftChange }: { domains: Awaited<Retu
     {catalog.data && <nav aria-label="Páginas de pesquisas"><button disabled={selection.page === 1 || catalog.isFetching} onClick={() => { onDraftChange(); setSelection(previous => ({ ...previous, page: previous.page - 1, pesquisa: '', agregado: '' })) }}>Anterior</button><span>Página {selection.page} · {catalog.data.data.pagination.total_count} pesquisas</span><button disabled={!catalog.data.data.pagination.has_next || catalog.isFetching} onClick={() => { onDraftChange(); setSelection(previous => ({ ...previous, page: previous.page + 1, pesquisa: '', agregado: '' })) }}>Próxima</button></nav>}
     </section>{aggregate && <Feedback loading={metadata.isFetching} error={metadata.error} retry={() => void metadata.refetch()} />}
     {aggregate && metadata.isSuccess && metadata.data.data.id === aggregate.id && <MetadataView key={aggregate.id} data={metadata.data.data} sources={metadata.data.sources} onResult={onResult} onDraftChange={onDraftChange} />}
-    <Provenance sources={domains.sources} />
   </>
 }
 
@@ -91,12 +90,11 @@ export default function App() {
   const [result, setResult] = useState<Envelope<Result> | null>(null)
   const [currentDraftKey, setCurrentDraftKey] = useState<string | null>(null)
   const domains = useQuery({ queryKey: ['dominios'], queryFn: ({ signal }) => getDomains(signal), staleTime: 60_000 })
-  return <main><header><a className="brand" href="/">Pesquisas IBGE</a><span className="tag">Agregados</span></header>
-    <section className="intro"><p className="eyebrow">EXPLORADOR DE DADOS</p><h1>Explore pesquisas<br />e seus agregados.</h1><p>Encontre um agregado e conheça suas dimensões publicadas.</p></section>
-    <QueryImport restore={draft => { setRestoration({ draft, error: '' }); setCurrentDraftKey(draftKey(draft)) }} />
+  return <main><h1 className="page-title">Pesquisas IBGE <span>Agregados</span></h1>
     {restoration.error && <p role="alert">{restoration.error}</p>}
     {restoration.draft && <><button onClick={() => { setRestoration({ draft: null, error: '' }); setCurrentDraftKey(null); history.replaceState(null, '', location.pathname + location.search) }}>Voltar à descoberta</button><Restored key={JSON.stringify(restoration.draft)} draft={restoration.draft} onResult={value => { setResult(value); setCurrentDraftKey(draftKey(value.data.consulta_aplicada)) }} onDraftChange={draft => setCurrentDraftKey(draft ? draftKey(draft) : null)} /></>}
     <Feedback loading={domains.isFetching} error={domains.error} retry={() => void domains.refetch()} />{!restoration.draft && domains.isSuccess && <Discovery domains={domains.data} onResult={value => { setResult(value); setCurrentDraftKey(draftKey(value.data.consulta_aplicada)) }} onDraftChange={draft => setCurrentDraftKey(draft ? draftKey(draft) : null)} />}
     {result && <Results key={JSON.stringify(result.sources)} response={result} pending={currentDraftKey !== draftKey(result.data.consulta_aplicada)} />}
+    <details className="query-import"><summary>Restaurar consulta salva</summary><p>Importe um JSON exportado por esta aplicação para recuperar os filtros de uma consulta.</p><QueryImport restore={draft => { setRestoration({ draft, error: '' }); setCurrentDraftKey(draftKey(draft)) }} /></details>
     <footer>Fonte: Instituto Brasileiro de Geografia e Estatística.</footer></main>
 }

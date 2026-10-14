@@ -1,3 +1,4 @@
+import { selectCatalogOption } from './catalog-picker'
 import { test, expect, type Page } from '@playwright/test'
 import fs from 'node:fs/promises'
 
@@ -47,8 +48,8 @@ test('fase 6: catálogo até restauração e exportação, teclado e mobile', as
   let executions = 0
   page.on('request', r => { if (r.url().includes('/executar/')) executions++ })
   await page.goto('/')
-  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).selectOption('SINTETICA')
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('900001')
+  await selectCatalogOption(page, 'Pesquisa', 'SINTETICA')
+  await selectCatalogOption(page, 'Agregado', '900001')
   for (const name of [/000101/, /102 ·/, /0000001/, /0000002/, /202401/, /202403/, /01 · Grupo A/, /02 · Grupo B/, /00 · Condição A/]) {
     const control = page.getByRole('checkbox', { name })
     await control.focus(); await page.keyboard.press('Space'); await expect(control).toBeChecked()

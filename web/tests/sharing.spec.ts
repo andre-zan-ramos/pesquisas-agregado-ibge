@@ -44,6 +44,7 @@ test('importação estrita rejeita tipos, campos, versões, duplicatas e tamanho
   await page.goto(link()); await expect(page.getByRole('region', { name: 'Consulta validada' })).toBeVisible()
   await page.getByRole('button', { name: 'Buscar', exact: true }).click()
   await expect(page.getByRole('region', { name: 'Resultado aplicado' })).toBeVisible()
+  await page.getByText('Restaurar consulta salva', { exact: true }).click()
   for (const content of [document({ ...query, agregado_id: 900001 }), document({ ...query, url: 'https://evil.test' }), document({ ...query, periodo_ids: [] }), document({ ...query, localidade_ids: ['0000001', '0000001'] }), JSON.stringify({ version: 2, consulta: query }), document().replace('"version":1', '"version":1,"version":1'), 'x'.repeat(65537), '{']) {
     await page.getByLabel('Importar JSON de consulta').setInputFiles({ name: 'consulta.json', mimeType: 'application/json', buffer: Buffer.from(content) })
     await expect(page.getByRole('alert')).toBeVisible()

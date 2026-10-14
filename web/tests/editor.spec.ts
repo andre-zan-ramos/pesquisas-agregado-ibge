@@ -1,9 +1,10 @@
+import { selectCatalogOption } from './catalog-picker'
 import { test, expect, type Page } from '@playwright/test'
 const prefix = '/api/v1/agregados-ibge'
 async function choose(page: Page) {
   await page.goto('/')
-  await page.getByRole('combobox', { name: 'Pesquisa', exact: true }).selectOption('SINTETICA')
-  await page.getByRole('combobox', { name: 'Agregado', exact: true }).selectOption('900001')
+  await selectCatalogOption(page, 'Pesquisa', 'SINTETICA')
+  await selectCatalogOption(page, 'Agregado', '900001')
   await expect(page.getByRole('region', { name: 'Editor de consulta' })).toBeVisible()
 }
 async function fill(page: Page) {
