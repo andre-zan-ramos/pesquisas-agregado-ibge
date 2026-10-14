@@ -1,6 +1,6 @@
 # Explorador de agregados do IBGE — análise e implementação por fases
 
-Atualização: 14/10/2026. Situação: fases 0–4 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fases 5–6 pendentes. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md), [docs/FASE_2.md](docs/FASE_2.md), [docs/FASE_3.md](docs/FASE_3.md) e [docs/FASE_4.md](docs/FASE_4.md).
+Atualização: 14/10/2026. Situação: fases 0–5 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fase 6 pendente. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md), [docs/FASE_2.md](docs/FASE_2.md), [docs/FASE_3.md](docs/FASE_3.md), [docs/FASE_4.md](docs/FASE_4.md) e [docs/FASE_5.md](docs/FASE_5.md).
 
 ## 1. Objetivo e escopo
 
@@ -210,6 +210,8 @@ Aceite: resultado vazio não quebra; todas as classificações retornadas são p
 
 ### Fase 5 — compartilhamento e exportação
 
+Situação: implementada exclusivamente mediante solicitação de 14/10/2026. Entregas, políticas de URL/JSON/CSV, critérios e validações em [docs/FASE_5.md](docs/FASE_5.md). Sem commit ou publicação automática; fase 6 permanece pendente.
+
 Entregas: URL da aplicação restaura consulta validada, botão copiar link oficial, exportação CSV dos dados completos recebidos e JSON com proveniência. Links compartilhados não executam séries automaticamente; usuário confirma com Buscar. Se URL exceder limite prático, oferecer JSON de consulta para importar; link curto persistente fica para escopo posterior.
 
 Aceite: ida e volta mantém IDs, classificações e períodos; códigos com zeros são preservados nos dados exportados; CSV possui codificação e escape corretos, incluindo tratamento de fórmulas em planilhas sem alterar o JSON literal; metadados distinguem recorte e origem. Exportação não depende apenas das linhas visíveis da tabela.
@@ -245,4 +247,4 @@ Mapas, banco histórico de todas as pesquisas, carga integral, agendamentos, com
 
 Registrar: fase concluída; arquivos e contratos alterados; comportamento entregue; validação e resultados; evidências oficiais versus sintéticas; limitações; decisões pendentes; próxima fase. Não marcar fase concluída por mera existência dos arquivos se os critérios de aceite não passaram.
 
-Próximo pedido sugerido: **“Implementar apenas a fase 4 do PLANO_IMPLEMENTACAO.md, seguindo docs/contrato-api.md e docs/FASE_3.md.”** A fase 3 concluiu o editor e a validação/geração de URL com fixtures/mocks e preservou as oito capturas oficiais limitadas da fase 0. A próxima fase depende de autorização própria; não executar séries ou ampliar consultas automaticamente.
+Próximo pedido sugerido: **“Implementar exclusivamente a fase 6 do PLANO_IMPLEMENTACAO.md, seguindo docs/contrato-api.md e docs/FASE_0.md até docs/FASE_5.md.”** A fase 5 concluiu compartilhamento, restauração e exportação com fixtures/mocks e preservou as capturas oficiais da fase 0. A fase 6 depende de autorização própria; novas consultas reais ao IBGE e publicação exigem autorização explícita e registro do recorte/destino.

@@ -1,3 +1,5 @@
+import { download, resultCSV, literalJSON } from './query-transfer'
+import { QueryShare } from './Sharing'
 import { useState } from 'react'
 import type { Envelope } from './api/catalogo'
 import type { Analysis, Category, Result } from './api/consultas'
@@ -36,10 +38,16 @@ export default function Results({ response, pending }: { response: Envelope<Resu
   const [page, setPage] = useState(1)
   const [variable, setVariable] = useState(result.consulta_aplicada.variavel_ids[0])
   const [analysisIndex, setAnalysisIndex] = useState(0)
+  const [copyMessage, setCopyMessage] = useState('')
+  const officialURL = response.sources.find(s => s.source_url.includes('/variaveis/'))?.source_url
   const rows = result.observacoes.filter(r => r.variavel_id === variable)
   const analyses = result.analises.filter(a => a.variavel_id === variable)
   const analysis = analyses[analysisIndex]
   return <section aria-label="Resultado aplicado"><h2>Resultado · {result.consulta_aplicada.agregado_id}</h2>
+    <button onClick={() => download('resultado-ibge.csv', resultCSV(response), 'text/csv;charset=utf-8')}>Exportar CSV completo</button>
+    <button onClick={() => download('resultado-ibge.json', literalJSON(response), 'application/json;charset=utf-8')}>Exportar JSON com proveniência</button>
+    {officialURL && <details><summary>URL oficial do resultado</summary><label>URL oficial aplicada<textarea readOnly value={officialURL} /></label><button onClick={() => void navigator.clipboard.writeText(officialURL).then(() => setCopyMessage('URL copiada.')).catch(() => setCopyMessage('Selecione e copie a URL no campo.'))}>Copiar URL oficial do resultado</button><p role="status">{copyMessage}</p></details>}
+    <details><summary>Compartilhar consulta aplicada</summary><QueryShare draft={result.consulta_aplicada} /></details>
     {pending && <p role="status">Alterações pendentes. O último resultado aplicado está preservado; use Buscar para atualizar.</p>}
     <details><summary>Consulta aplicada e proveniência</summary><pre>{JSON.stringify(result.consulta_aplicada, null, 2)}</pre><p>Normalizador {result.normalizer_version} · resposta completa</p>{response.sources.map((s, i) => <p key={i}><a href={s.source_url}>{s.source_url}</a><br />Obtido em {s.fetched_at} · expira em {s.expires_at} · {s.cache_hit ? 'cache' : 'fonte'}</p>)}</details>
     {result.warnings.length > 0 && <details><summary>Avisos ({result.warnings.length})</summary>{result.warnings.map((w, i) => <p key={i}>{w.code}: {w.message}</p>)}</details>}
