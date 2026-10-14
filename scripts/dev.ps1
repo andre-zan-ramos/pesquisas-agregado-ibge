@@ -23,6 +23,19 @@ $oldWebPort = $env:VITE_WEB_PORT
 $env:VITE_BACKEND_PROXY_TARGET = "http://127.0.0.1:$BackendPort"
 $env:VITE_WEB_PORT = "$WebPort"
 $children = @()
+function Get-ServerProcessIds {
+    param([int]$RootProcessId, [object[]]$Processes)
+    $ids = @($RootProcessId)
+    for ($index = 0; $index -lt $ids.Count; $index++) {
+        $parentId = $ids[$index]
+        foreach ($process in $Processes) {
+            if ($process.ParentProcessId -eq $parentId -and $process.ProcessId -notin $ids) {
+                $ids += [int]$process.ProcessId
+            }
+        }
+    }
+    return $ids
+}
 try {
     $backend = Start-Process -FilePath $pythonPath -ArgumentList @('manage.py', 'runserver', "127.0.0.1:$BackendPort", '--noreload') -WorkingDirectory (Join-Path $projectRoot 'backend') -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $logDirectory "$runId-backend.out.log") -RedirectStandardError (Join-Path $logDirectory "$runId-backend.err.log")
     $children += $backend
@@ -40,8 +53,12 @@ try {
             if ($child.HasExited) { throw "Servidor PID $($child.Id) encerrou com codigo $($child.ExitCode). Consulte os logs $runId." }
         }
         if ($browserPending) {
-            $backendListener = Get-NetTCPConnection -State Listen -LocalPort $BackendPort -ErrorAction SilentlyContinue | Where-Object { $_.OwningProcess -eq $backend.Id }
-            $webListener = Get-NetTCPConnection -State Listen -LocalPort $WebPort -ErrorAction SilentlyContinue | Where-Object { $_.OwningProcess -eq $frontend.Id }
+            # O launcher Python da venv no Windows delega ao processo filho.
+            $processes = @(Get-CimInstance Win32_Process -Property ProcessId, ParentProcessId)
+            $backendIds = @(Get-ServerProcessIds -RootProcessId $backend.Id -Processes $processes)
+            $webIds = @(Get-ServerProcessIds -RootProcessId $frontend.Id -Processes $processes)
+            $backendListener = Get-NetTCPConnection -State Listen -LocalPort $BackendPort -ErrorAction SilentlyContinue | Where-Object { $_.OwningProcess -in $backendIds }
+            $webListener = Get-NetTCPConnection -State Listen -LocalPort $WebPort -ErrorAction SilentlyContinue | Where-Object { $_.OwningProcess -in $webIds }
             if ($backendListener -and $webListener) {
                 $browserPending = $false
                 try { Start-Process -FilePath "http://127.0.0.1:$WebPort" -ErrorAction Stop }
