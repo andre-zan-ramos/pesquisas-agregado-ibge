@@ -2,6 +2,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import CatalogSerializer, DomainsSerializer, MetadataSerializer, DiscoverySerializer, query_params
 from .services.catalogo import CatalogService
+from .services.consultas import QueryService
+from .serializers import LocalityQuerySerializer
 
 
 @api_view(["GET"])
@@ -29,3 +31,24 @@ def metadados(request, aggregate_id):
     query_params(request)
     service = CatalogService()
     return Response(service.envelope(MetadataSerializer(service.metadata(aggregate_id)).data))
+
+
+@api_view(["GET"])
+def periodos(request, aggregate_id):
+    query_params(request)
+    service = QueryService()
+    return Response(service.envelope(service.periods(aggregate_id)))
+
+
+@api_view(["GET"])
+def localidades(request, aggregate_id):
+    params = query_params(request, LocalityQuerySerializer)
+    service = QueryService()
+    return Response(service.envelope(service.locations(aggregate_id, params)))
+
+
+@api_view(["POST"])
+def validar(request):
+    query_params(request)
+    service = QueryService()
+    return Response(service.envelope(service.validate(request.data)))

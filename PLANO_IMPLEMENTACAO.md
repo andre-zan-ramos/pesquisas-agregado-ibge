@@ -1,6 +1,6 @@
 # Explorador de agregados do IBGE — análise e implementação por fases
 
-Data: 13/10/2026. Situação: fases 0, 1 e 2 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fases 3–6 pendentes. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md) e [docs/FASE_2.md](docs/FASE_2.md).
+Data: 13/10/2026. Situação: fases 0–3 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fases 4–6 pendentes. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md), [docs/FASE_2.md](docs/FASE_2.md) e [docs/FASE_3.md](docs/FASE_3.md).
 
 ## 1. Objetivo e escopo
 
@@ -194,7 +194,9 @@ Aceite: N6 inicial quando disponível; filtros não deixam seleções incompatí
 
 ### Fase 3 — editor completo e URL oficial
 
-Entregas: variáveis, localidades, períodos, classificações/categorias; validação no backend; orçamento; URL oficial copiável; rascunho separado da consulta aplicada. Localidades enriquecidas sem perda de IDs.
+Situação: concluída exclusivamente no escopo autorizado. API de períodos/localidades e validação, editor React e URL copiável entregues; evidências, limites e pendências em [docs/FASE_3.md](docs/FASE_3.md). Validação offline com fixtures/mocks, sem novas consultas ao IBGE ou execução de séries. Fases 4–6 não implementadas. Commit e sincronização Git autorizados separadamente após a entrega inicial; sem publicação da aplicação.
+
+Entregas: variáveis, localidades, períodos, classificações/categorias; validação no backend; orçamento; URL oficial copiável; rascunho separado da consulta validada. Localidades oficiais sem enriquecimento de UF, conforme solicitação desta fase; IDs e nomes preservados.
 
 Aceite: todos os parâmetros relevantes aparecem na URL gerada; seleção inválida ou excessiva é rejeitada; total é escolhido explicitamente quando existente; mudar campos dependentes limpa seleções inválidas; gerar URL não executa séries.
 
@@ -241,4 +243,4 @@ Mapas, banco histórico de todas as pesquisas, carga integral, agendamentos, com
 
 Registrar: fase concluída; arquivos e contratos alterados; comportamento entregue; validação e resultados; evidências oficiais versus sintéticas; limitações; decisões pendentes; próxima fase. Não marcar fase concluída por mera existência dos arquivos se os critérios de aceite não passaram.
 
-Próximo pedido sugerido: **“Implementar apenas a fase 3 do PLANO_IMPLEMENTACAO.md, seguindo docs/contrato-api.md e docs/FASE_2.md.”** A fase 2 concluiu a descoberta com validação offline e preservou as oito capturas oficiais limitadas da fase 0. Não ampliar consultas ou avançar fases automaticamente.
+Próximo pedido sugerido: **“Implementar apenas a fase 4 do PLANO_IMPLEMENTACAO.md, seguindo docs/contrato-api.md e docs/FASE_3.md.”** A fase 3 concluiu o editor e a validação/geração de URL com fixtures/mocks e preservou as oito capturas oficiais limitadas da fase 0. A próxima fase depende de autorização própria; não executar séries ou ampliar consultas automaticamente.

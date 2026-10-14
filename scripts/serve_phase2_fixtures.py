@@ -26,6 +26,9 @@ def handle(request):
     path = request.url.path
     if path.endswith("/metadados"):
         body = load("metadados.json")
+    elif "/localidades/" in path:
+        level = path.rsplit("/", 1)[-1]
+        body = [{**v, "nivel": {"id": level}} for v in load("localidades.json")]
     elif path.endswith("/periodos"):
         body = load("periodos.json")
     elif path == "/api/v3/agregados":

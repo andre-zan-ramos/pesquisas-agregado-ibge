@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Editor from './Editor'
 import { useQuery } from '@tanstack/react-query'
 import { getDomains, getMetadata, getResearches, type Item, type Metadata, type Source } from './api/catalogo'
 
@@ -26,7 +27,7 @@ function MetadataView({ data, sources }: { data: Metadata; sources: Source[] }) 
   const [level, setLevel] = useState(data.niveis.some(item => item.id === 'N6') ? 'N6' : '')
   return <section className="metadata" aria-labelledby="metadata-title"><h2 id="metadata-title">{data.id} · {data.nome}</h2>
     <p>{data.pesquisa} · {data.assunto}</p><p>{data.periodicidade.frequencia} · {data.periodicidade.inicio} a {data.periodicidade.fim}</p><p>Referência SIDRA: {data.sidra_url}</p>
-    <Picker label="Nível publicado do agregado" items={Array.from(new Map(data.niveis.map(item => [item.id, { id: item.id, nome: item.nome ?? item.id }])).values())} value={data.niveis.some(item => item.id === level) ? level : ''} onChange={setLevel} />
+    <Editor key={JSON.stringify(data)} metadata={data} level={data.niveis.some(item => item.id === level) ? level : ''} setLevel={setLevel} />
     {data.niveis.length === 0 && <p role="status">Nenhum nível territorial publicado.</p>}
     <details open><summary>Todos os grupos territoriais</summary>{Array.from(new Set(data.niveis.map(item => item.grupo))).map(group => <div key={group}><h3>{group}</h3>{!['Administrativo', 'Especial', 'IBGE'].includes(group) && <p>Grupo adicional publicado pela fonte.</p>}<ul>{data.niveis.filter(item => item.grupo === group).map((item, index) => <li key={`${item.id}-${index}`}>{item.id} · {item.nome ?? 'Nome não publicado no acervo'}</li>)}</ul></div>)}</details>
     <details><summary>Variáveis e unidades ({data.variaveis.length})</summary>{data.variaveis.map((item, index) => <div key={`${item.id}-${index}`}><h3>{item.id} · {item.nome}</h3><p>Unidade: {item.unidade ?? 'Não informada'}<br />Sumarização: {item.sumarizacao.join(', ') || 'Nenhuma'}</p></div>)}</details>

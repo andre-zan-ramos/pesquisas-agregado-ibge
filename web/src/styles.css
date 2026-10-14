@@ -33,3 +33,4 @@ summary { cursor: pointer; font-weight: 600; }
 h3 { font-size: 16px; margin-bottom: 8px; }
 li { margin: 8px 0; } .metadata h2 { overflow-wrap: anywhere; }
 @media (max-width: 600px) { main { padding: 26px 22px; }.intro { margin-top: 64px; }.welcome { padding: 22px; gap: 16px; }.tag { font-size: 13px; } }
+.choices { display: grid; gap: .5rem; max-height: 18rem; overflow-y: auto; } .choices label { display: flex; align-items: center; gap: .5rem; } .choices input { width: auto; } textarea { width: 100%; min-height: 7rem; overflow-wrap: anywhere; } fieldset { min-width: 0; }

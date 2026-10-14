@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
   await page.route('https://**/*', route => { throw new Error(`Rede externa proibida: ${route.request().url()}`) })
   page.on('pageerror', error => { throw error })
   page.on('request', request => {
-    expect(request.url()).not.toMatch(/\/consultas\/|\/variaveis\/|\/localidades\//)
+    expect(request.url()).not.toMatch(/\/consultas\/executar\/|\/variaveis\//)
   })
 })
 
@@ -32,9 +32,9 @@ test('Django com transporte mock: domínios, seleção e metadados completos', a
   await expect(page.getByRole('heading', { name: '000101 · Indicador sintético A' })).toBeVisible()
   await page.getByText('Classificações e categorias (2)', { exact: true }).click()
   await expect(page.getByText(/Variáveis com exceção de total: 102/)).toBeVisible()
-  await expect(page.getByText(/00 · Condição A/)).toBeVisible()
+  await expect(page.getByRole('listitem').filter({ hasText: /00 · Condição A/ })).toBeVisible()
   await page.getByText('Períodos publicados (2)', { exact: true }).click()
-  await expect(page.getByText(/202401 · Janeiro 2024 \/ Jan 2024/)).toBeVisible()
+  await expect(page.getByRole('listitem').filter({ hasText: /202401 · Janeiro 2024 \/ Jan 2024/ })).toBeVisible()
 })
 
 test('busca por código/nome e filtros limpam seleções', async ({ page }) => {

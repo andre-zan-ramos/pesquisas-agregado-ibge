@@ -5,14 +5,14 @@ export class ApiError extends Error {
   }
 }
 
-export async function getApi<T>(path: string, signal?: AbortSignal, params?: Record<string, string>): Promise<T> {
+export async function getApi<T>(path: string, signal?: AbortSignal, params?: Record<string, string>, bodyData?: unknown): Promise<T> {
   if (!/^\/[a-z0-9/-]+\/$/.test(path)) throw new ApiError('Caminho de API inválido.', 'invalid_path')
   const timeout = AbortSignal.timeout(60_000)
   const requestSignal = signal ? AbortSignal.any([signal, timeout]) : timeout
   let response: Response
   try {
     const query = new URLSearchParams(params)
-    response = await fetch(`/api/v1/agregados-ibge${path}${query.size ? `?${query}` : ''}`, { signal: requestSignal, headers: { Accept: 'application/json' } })
+    response = await fetch(`/api/v1/agregados-ibge${path}${query.size ? `?${query}` : ''}`, { signal: requestSignal, method: bodyData === undefined ? 'GET' : 'POST', body: bodyData === undefined ? undefined : JSON.stringify(bodyData), headers: { Accept: 'application/json', 'Content-Type': 'application/json' } })
   } catch (error) {
     if (signal?.aborted) throw error
     throw new ApiError(timeout.aborted ? 'O servidor excedeu o tempo de resposta.' : 'Não foi possível conectar ao servidor.', timeout.aborted ? 'timeout' : 'network_error')

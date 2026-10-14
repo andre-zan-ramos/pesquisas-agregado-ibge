@@ -127,6 +127,6 @@ class CatalogApiTests(SimpleTestCase):
                 self.assertEqual(response.json()["error"]["code"], "upstream_inconsistent_data")
 
     def test_no_query_editor_routes(self):
-        for path in ("consultas/validar/", "consultas/executar/", "agregados/900001/localidades/", "agregados/900001/periodos/"):
+        for path in ("consultas/executar/",):
             self.assertEqual(self.get(path).status_code, 404)
         self.assertEqual(self.requests, [])

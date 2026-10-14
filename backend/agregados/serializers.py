@@ -87,6 +87,13 @@ class DiscoverySerializer(serializers.Serializer):
     page_size = serializers.IntegerField(required=False, default=50, min_value=1, max_value=200)
 
 
+class LocalityQuerySerializer(serializers.Serializer):
+    nivel = serializers.RegexField(r"^N[0-9]+$", trim_whitespace=False)
+    q = serializers.CharField(required=False, max_length=200, allow_blank=True)
+    page = serializers.IntegerField(required=False, default=1, min_value=1, max_value=1000000)
+    page_size = serializers.IntegerField(required=False, default=50, min_value=1, max_value=200)
+
+
 def query_params(request, serializer_class=None):
     allowed = set(serializer_class().fields) if serializer_class else set()
     if set(request.query_params) - allowed or any(len(request.query_params.getlist(k)) != 1 for k in request.query_params):
