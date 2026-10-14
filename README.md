@@ -1,6 +1,6 @@
 # Pesquisas por agregados do IBGE
 
-Base independente em Django/DRF e React/TypeScript/Vite. Fase 0: contrato, esquemas e amostras. Fase 1: infraestrutura e cliente IBGE. Fase 2: descoberta de pesquisas/agregados e metadados completos. Fase 3: editor e URL oficial. Fase 4: Buscar explícito, normalização, tabela, gráficos e estatísticas. Compartilhamento/exportação e entrega operacional permanecem nas fases 5–6 do [plano](PLANO_IMPLEMENTACAO.md).
+Base independente em Django/DRF e React/TypeScript/Vite. Fases 0–6 concluídas no escopo local/offline: contrato e amostras, infraestrutura, descoberta, editor, resultados, compartilhamento/restauração/exportação e verificação integrada. [Operação, medições e pendências da fase 6](docs/FASE_6.md). Aceitação operacional do IBGE e publicação continuam pendentes; destino de hospedagem não definido.
 
 ## Preparação no Windows
 
@@ -59,6 +59,8 @@ npm run test:browser
 Os testes Chromium iniciam seus próprios servidores em 8828/5198, usando `scripts/serve_phase2_fixtures.py` com transporte exclusivamente simulado. Precisam da `.venv` local e do navegador Playwright instalado; `playwright install` baixa a ferramenta, sem consultar dados IBGE. Os servidores encerram ao finalizar a suíte. Abrir o launcher normal e usar a descoberta faz consultas de catálogo/metadados ao IBGE, respeitando cache e limites do transporte.
 
 Execução: `POST consultas/executar/`, somente pelo botão Buscar; edições preservam o último resultado aplicado. Contrato, critérios de suspensão analítica e validações em [FASE_4.md](docs/FASE_4.md). Períodos/localidades e validação de URL seguem [FASE_3.md](docs/FASE_3.md).
+
+Compartilhamento/restauração e CSV/JSON seguem [FASE_5.md](docs/FASE_5.md). Restaurar link ou importar JSON revalida as dimensões sem executar séries. JSON de resultado conserva o envelope completo e a proveniência; exportações referem-se ao último resultado aplicado.
 
 Rotas da fase 2: `GET dominios/`, `GET pesquisas/` e `GET agregados/{id}/metadados/`, sob `/api/v1/agregados-ibge/`. Respostas usam `data` e `sources`; filtros, paginação e busca são descritos em [FASE_2.md](docs/FASE_2.md).
 

@@ -1,6 +1,6 @@
 # Explorador de agregados do IBGE — análise e implementação por fases
 
-Atualização: 14/10/2026. Situação: fases 0–5 concluídas mediante solicitações explícitas; a fase 0 foi executada após a base da fase 1. Fase 6 pendente. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md), [docs/FASE_2.md](docs/FASE_2.md), [docs/FASE_3.md](docs/FASE_3.md), [docs/FASE_4.md](docs/FASE_4.md) e [docs/FASE_5.md](docs/FASE_5.md).
+Atualização: 14/10/2026. Situação: fases 0–6 concluídas mediante solicitações explícitas, com fase 6 limitada à verificação offline e documentação operacional; a fase 0 foi executada após a base da fase 1. Aceitação operacional upstream e publicação pendentes. Contrato em [docs/contrato-api.md](docs/contrato-api.md); evidências em [docs/FASE_0.md](docs/FASE_0.md), [docs/FASE_1.md](docs/FASE_1.md), [docs/FASE_2.md](docs/FASE_2.md), [docs/FASE_3.md](docs/FASE_3.md), [docs/FASE_4.md](docs/FASE_4.md), [docs/FASE_5.md](docs/FASE_5.md) e [docs/FASE_6.md](docs/FASE_6.md).
 
 ## 1. Objetivo e escopo
 
@@ -218,6 +218,8 @@ Aceite: ida e volta mantém IDs, classificações e períodos; códigos com zero
 
 ### Fase 6 — verificação integrada e entrega operacional
 
+Situação: concluída no escopo autorizado em 14/10/2026. Verificação integrada com fixtures/mocks, medições limitadas de backend/navegador e instruções operacionais em [docs/FASE_6.md](docs/FASE_6.md). Fases 0–5, contratos e hashes preservados; somente Buscar executa séries. Sem novas consultas reais ao IBGE, alterações em projetos vizinhos, commit ou publicação. Destino de publicação não definido; configuração de hospedagem e aceitação operacional permanecem pendentes.
+
 Entregas: testes de navegador com fixtures, medição limitada de tempos/bytes/renderização, documentação operacional, limites finais e lista de pendências. Consultas reais pequenas apenas quando autorizadas e registradas. Validar configuração de publicação quando o destino estiver definido.
 
 Aceite: fluxo completo catálogo → editor → Buscar → resultado → exportação; editar rascunho não busca; repetição usa cache; falha permite recuperação; teclado e visualização móvel funcionam. Registrar exatamente quais cenários foram verificados offline e quais foram confirmados no IBGE. Evidência de fixtures não comprova disponibilidade ou desempenho upstream.
@@ -247,4 +249,4 @@ Mapas, banco histórico de todas as pesquisas, carga integral, agendamentos, com
 
 Registrar: fase concluída; arquivos e contratos alterados; comportamento entregue; validação e resultados; evidências oficiais versus sintéticas; limitações; decisões pendentes; próxima fase. Não marcar fase concluída por mera existência dos arquivos se os critérios de aceite não passaram.
 
-Próximo pedido sugerido: **“Implementar exclusivamente a fase 6 do PLANO_IMPLEMENTACAO.md, seguindo docs/contrato-api.md e docs/FASE_0.md até docs/FASE_5.md.”** A fase 5 concluiu compartilhamento, restauração e exportação com fixtures/mocks e preservou as capturas oficiais da fase 0. A fase 6 depende de autorização própria; novas consultas reais ao IBGE e publicação exigem autorização explícita e registro do recorte/destino.
+Handoff final: fases 0–6 entregues no escopo local/offline. Consultar [docs/FASE_6.md](docs/FASE_6.md) para reproduzir verificações, operar o ambiente local e avaliar limites. Novas consultas reais ao IBGE e publicação dependem de autorização explícita e registro do recorte/destino; não há fase seguinte implementada automaticamente.
