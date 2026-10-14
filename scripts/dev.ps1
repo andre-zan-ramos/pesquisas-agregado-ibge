@@ -1,6 +1,7 @@
 param(
     [ValidateRange(1,65535)][int]$BackendPort = 8817,
-    [ValidateRange(1,65535)][int]$WebPort = 5187
+    [ValidateRange(1,65535)][int]$WebPort = 5187,
+    [switch]$OpenBrowser
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
@@ -32,10 +33,20 @@ try {
     Write-Host "Agregados IBGE: backend PID $($backend.Id), frontend PID $($frontend.Id)"
     Write-Host "Abra http://127.0.0.1:$WebPort"
     Write-Host "Logs: $logDirectory ($runId). Ctrl+C encerra os servidores desta execucao."
+    $browserPending = $OpenBrowser.IsPresent
     while ($true) {
         foreach ($child in $children) {
             $child.Refresh()
             if ($child.HasExited) { throw "Servidor PID $($child.Id) encerrou com codigo $($child.ExitCode). Consulte os logs $runId." }
+        }
+        if ($browserPending) {
+            $backendListener = Get-NetTCPConnection -State Listen -LocalPort $BackendPort -ErrorAction SilentlyContinue | Where-Object { $_.OwningProcess -eq $backend.Id }
+            $webListener = Get-NetTCPConnection -State Listen -LocalPort $WebPort -ErrorAction SilentlyContinue | Where-Object { $_.OwningProcess -eq $frontend.Id }
+            if ($backendListener -and $webListener) {
+                $browserPending = $false
+                try { Start-Process -FilePath "http://127.0.0.1:$WebPort" -ErrorAction Stop }
+                catch { Write-Warning "Nao foi possivel abrir o navegador. Abra http://127.0.0.1:$WebPort manualmente." }
+            }
         }
         Start-Sleep -Milliseconds 500
     }

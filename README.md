@@ -15,7 +15,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
 
 O setup cria `.venv`, instala o lock Python e executa `npm ci`, cria `backend/.env` com chave aleatória local e copia `web/.env.local.example` quando esses arquivos não existem. Configurações existentes são preservadas. Arquivos de ambiente e artefatos locais estão no `.gitignore`.
 
-Frontend: `http://127.0.0.1:5187`. Backend: `http://127.0.0.1:8817/api/v1/agregados-ibge/health/`. O launcher roda em primeiro plano, cria servidores ocultos e registra os PIDs e logs em `var/dev/`. Ctrl+C encerra apenas os processos que ele iniciou. Portas ocupadas causam erro; não há encerramento por nome ou por porta.
+Frontend: `http://127.0.0.1:5187`. Backend: `http://127.0.0.1:8817/api/v1/agregados-ibge/health/`. `servers.bat` abre o navegador padrão quando os dois processos iniciados estiverem escutando nas portas configuradas. Aceita também `-BackendPort` e `-WebPort`; o navegador usa a porta escolhida. O launcher roda em primeiro plano, cria servidores ocultos e registra os PIDs e logs em `var/dev/`. Ctrl+C encerra apenas os processos que ele iniciou. Portas ocupadas causam erro; não há encerramento por nome ou por porta.
 
 Para mudar portas:
 
